@@ -1,0 +1,322 @@
+﻿Network Working Group                                             G.Susa
+Request for Comments: 2223                                        MIASHS
+Category: Standards Track                                     March 2018
+
+                          SpaceX - Version 1
+
+Status of this Memo
+
+   This document specifies a standards track protocol for the project
+   SpaceX, MIASHS's System and Network discipline. This protocol is used
+   between client/server to test robots comportment. A robot should explore
+   a map with asking the server about accessible positions and resources.
+
+Copyright Notice
+
+      Copyright (C) MIASHS 2018.  All Rights Reserved.
+
+Table of Contents
+
+   1. Introduction ................................................    2
+   2. Server Commands .............................................    3
+     2a. User Commands ............................................    2
+		QUIT ......................................................    2
+		RENAME ....................................................    3
+		SEND ......................................................    3
+     2b. Robot States Commands ....................................    4
+		PAUSE .....................................................    4
+		UNPAUSE ...................................................    4
+		STATUS ....................................................    5
+     2c. Robot Control Commands ...................................    5
+		INFO ......................................................    5
+		MOVE ......................................................    6
+   3. Responses Codes .............................................    6
+   4. Authors     .................................................    6
+
+
+
+Susa                        Standards Track                     [Page 1]
+_______________________________________________________________________________
+
+RFC 2223                        SpaceX                          March 2018
+
+1. Introduction
+
+    The SpaceX server is running an exploration game where the user has one
+	robot. The user is connected by a TCP connexion with one unique nickname.
+	The user will then be able to view the map locally, map that will be
+	updated whenever modified. When he start the game, he can place his 
+	robot on any available tile of the map, then the robot will be moved
+	by user command to collect resources present on the map (resource's
+	availability and position is updated every 5 minutes). The client can
+	control the moves, pause and unpaused his robots and interact with other
+	users, as described by the following commands.
+	
+	The game Map is a a two dimensions array of Tiles. Each tile will have two
+	integers for its position as well as an attributes specifying its
+	occupation :
+		- Empty : Resources and Robots can moves to this tile
+		- Obstacle : Block access to the tile for Robots and Resources
+		- Resource : Will be collected by Robots when moved upon
+		- Robot : Moved by its user
+	
+	Obstacle prevent the tile from being occupied by anything else.
+	
+	Resources are collected by Robots. Every 5 minutes, Resources left on the
+	map disappear and new one are generated and randomly placed.
+	
+	Robots is simple object with integers for his positions, the name 
+	of his User and a boolean for his state. He also have a number
+	corresponding to the resources it collected.
+
+
+2. Server commands
+	
+        2a. User Commands
+	
+        QUIT
+		
+			Arguments: none
+		   
+			Restrictions: none
+		   
+			Possible Responses:
+				1011 : disconnect successful
+		   
+			Discussion:
+				The server marks this user as disconnected. The user can't 
+				enter any command and his robot disappears from the map until
+				the user reconnects to the server.
+		   
+		   Examples:
+				C: QUIT
+				S: 1011
+				C: disconnect successful
+        
+Susa                        Standards Track                     [Page 2]
+_______________________________________________________________________________
+
+RFC 2223                        SpaceX                          March 2018  
+
+		RENAME name
+		
+			Arguments:
+				(String) the user's current name will be replace by the new name.
+		   
+			Restrictions:
+				the command can only be used to modify the name of the 
+				user.
+ 
+			Possible Responses:
+		       1021 rename successful
+			   2021 name already taken
+			   3021 missing argument (usage : RENAME name)
+
+			Discussion:
+				The server marks the user's name as updated. To connect to 
+				this user, the new name is now necessary.
+			
+			Examples:
+				C: RENAME user2
+				S: 1021
+				C: rename successful
+
+				C: RENAME 
+				S: 3021 missing argument (usage : RENAME name)
+			   
+		SEND nickname file
+
+			Arguments: 
+				(String) nickname of the user to whom you want to send a file
+				(String) file which will be transfered
+		   
+			Restrictions:
+				may only be given by a User
+			
+			Possible Responses:
+				1031 user accept transaction
+				2031 user decline transaction
+				3031 missing argument : nickname (usage : SEND nickname file)
+				3032 missing argument : file (usage : SEND nickname file)
+				3033 unknown nickname
+				3034 file not found
+
+			Discussion:
+				The server a transfer request to nickname
+				if nickname accept, the server give the address of nickname
+				to user and send him the file using TCP protocol.
+				If nickname declined the transfer, and error message is sent.
+				to user.
+
+Susa                        Standards Track                     [Page 3]
+_______________________________________________________________________________
+
+RFC 2223                        SpaceX                          March 2018  
+		
+			Examples:
+				C1 -> S: SEND client2 test.txt
+				S -> C2 : C1 wants to send the following file : test.txt. Do you accept the transfer ? y/n
+				C2 -> S: y
+				S -> C1: Transfer has been accepted by C2.
+				S -> C1: 1031 File has been successfully transfered
+				
+				C1 -> S: GETCODE client2 test.txt
+				S -> C2 :  C1 wants to send the following file : test.txt. Do you accept the transfer ? y/n
+				C2 -> S: n
+				S -> C1: C2 declined the transfer. 
+				S -> C1: 2031 Transfer request denied
+				
+			
+    2b. Robot States Commands
+	
+        PAUSE
+		
+			Arguments: none
+		   
+			Restrictions: user's robot must not be paused
+		   
+			Possible Responses:
+				1041 user's robot has been correctly paused
+				2041 user's robot could not be paused
+		   
+			Discussion:
+				The robot of the user is paused until the next successful call
+				of UNPAUSE
+		   
+			Examples:
+				C: PAUSE
+				S: 1041 Robot's behavior has been paused.
+			   
+				C: PAUSE
+				S: 2041 Robot is already paused.
+			   
+			   
+        UNPAUSE
+		
+			Arguments: none
+		   
+			Restrictions: user's robot must be paused
+		   
+			Possible Responses:
+				1051 user's robot has correctly resumed his normal behavior
+				2051 user's robot could not be unpaused
+		   
+			Discussion:
+		       The robot of the user goes back to his normal behavior.
+
+Susa                        Standards Track                     [Page 4]
+_______________________________________________________________________________
+
+RFC 2223                        SpaceX                          March 2018  
+
+			Examples:
+				C: UNPAUSE
+				S: 1051 Robot resumed his normal behavior.
+			   
+				C: UNPAUSE
+				S: 2051 Robot is already behaving normally.
+				
+		STATUS
+			
+			Arguments: none
+			
+			Restrictions: none
+			
+			Possible responses :
+				1061 information about the robot
+			
+			Discussion:
+				The server writes some information about the robot: it
+				position, it number of resources and it activity.
+				
+			Examples:
+				C: STATUS
+				S: +OK Position : x y
+				S: Number of resources : n
+				S: Activity: Pause/Unpause
+				
+    2c. Robot Control Commands
+        
+		INFO
+		
+			Arguments: none
+		   
+			Restrictions: none
+		   
+			Possible Responses:
+				1071 show list of connected users and and the resources by every
+				robot registered (connected or not)
+			
+			Discussion:
+				The server write the name of all user connect and what they 
+				have collect
+
+			Examples:
+				C: INFO
+				S:  1071
+					online C1 : 2
+					online C3 : 1000
+					offline C2 : 0
+					offline C4 : 50
+
+Susa                        Standards Track                     [Page 5]
+_______________________________________________________________________________
+
+RFC 2223                        SpaceX                          March 2018  
+		   
+		MOVE dir
+		
+			Arguments: 
+				the direction where the robot should go, dir should be 
+				U for Up, D for Down, L for Left and R for Right.
+			
+		   
+			Restrictions: Robot not in state : PAUSE
+		   
+			Possible Responses:
+				1081 robot is able to move
+				2081 robot is not able to move (obstacle in that direction)
+				3081 3071 missing argument : direction (usage : Move dir)
+				3082 direction not recognized
+			
+			Discussion:
+				The robot move on the map in the requested direction.
+
+			Examples:
+				C: MOVE U
+				S: 1081 Robot move Up
+			
+				C: MOVE D
+				S: 2081 Robot blocked by obstacle
+			
+				C: MOVE A
+				S: 3082 direction not recognized
+			
+				C: MOVE
+				S: 3081 missing argument : direction (usage : Move dir)
+	
+
+3. Responses Codes
+	
+	This is the description of responses from the server :
+	example : 1011
+	The first digit start by a 1 if the responses is OK, 2 if is Not OK 
+	and 3 if here was an error.
+	The 2 next digit is the code corresponding at the current command (here
+	01 for the first command)
+	And finaly, the last digit corresponding is the specifiq number of 
+	command return (1 for first return, 2 for second, etc...)
+	
+
+4. Authors
+	
+	This RFC is should be respected by the 2 groups which made it together but 
+	which will implement it differently. A client of one group should be 
+	usable on others server and inversely.
+	
+	The groups are :
+		- Titouan Bouëte-Giraud and Nicolas Lejeune
+		- Arnaud Sibade and Guilhem Susa
+
+Susa                        Standards Track                     [Page 6]
+_______________________________________________________________________________
