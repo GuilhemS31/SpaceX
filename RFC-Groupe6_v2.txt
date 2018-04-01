@@ -48,9 +48,10 @@ RFC 2223                        SpaceX                          March 2018
 	updated whenever modified. When he start the game, he can place his 
 	robot on any available tile of the map, then the robot will be moved
 	by user command to collect resources present on the map (resource's
-	availability and position is updated every 5 minutes). The client can
-	control the moves, pause and unpaused his robots and interact with other
-	users, as described by the following commands.
+	availability and position is updated every 5 minutes, refreshing the map
+	accordingly). The client can control the moves, pause and unpaused his
+	robots and interact with other	users, as described by the following
+	commands.
 	
 	The game Map is a a two dimensions array of Tiles. Each tile will have two
 	integers for its position as well as an attributes specifying its
@@ -122,7 +123,8 @@ RFC 2223                        SpaceX                          March 2018
 				C: rename successful
 
 				C: RENAME 
-				S: 3021 missing argument (usage : RENAME name)
+				S: 3021
+				C: missing argument (usage : RENAME name)
 			   
 		SEND nickname file
 
@@ -134,15 +136,15 @@ RFC 2223                        SpaceX                          March 2018
 				may only be given by a User
 			
 			Possible Responses:
-				1031 user accept transaction
-				2031 user decline transaction
+				1031 user accepted transaction
+				2031 user declined transaction
 				3031 missing argument : nickname (usage : SEND nickname file)
 				3032 missing argument : file (usage : SEND nickname file)
 				3033 unknown nickname
 				3034 file not found
 
 			Discussion:
-				The server a transfer request to nickname
+				The server transfer a request to nickname
 				if nickname accept, the server give the address of nickname
 				to user and send him the file using TCP protocol.
 				If nickname declined the transfer, and error message is sent.
@@ -158,13 +160,15 @@ RFC 2223                        SpaceX                          March 2018
 				S -> C2 : C1 wants to send the following file : test.txt. Do you accept the transfer ? y/n
 				C2 -> S: y
 				S -> C1: Transfer has been accepted by C2.
-				S -> C1: 1031 File has been successfully transfered
+				S -> C1: 1031
+				C1: File has been successfully transfered
 				
 				C1 -> S: GETCODE client2 test.txt
 				S -> C2 :  C1 wants to send the following file : test.txt. Do you accept the transfer ? y/n
 				C2 -> S: n
 				S -> C1: C2 declined the transfer. 
-				S -> C1: 2031 Transfer request denied
+				S -> C1: 2031
+				C1: Transfer request denied
 				
 			
     2b. Robot States Commands
@@ -185,10 +189,12 @@ RFC 2223                        SpaceX                          March 2018
 		   
 			Examples:
 				C: PAUSE
-				S: 1041 Robot's behavior has been paused.
+				S: 1041
+				C: Robot's behavior has been paused.
 			   
 				C: PAUSE
-				S: 2041 Robot is already paused.
+				S: 2041
+				C: Robot is already paused.
 			   
 			   
         UNPAUSE
@@ -211,10 +217,12 @@ RFC 2223                        SpaceX                          March 2018
 
 			Examples:
 				C: UNPAUSE
-				S: 1051 Robot resumed his normal behavior.
+				S: 1051
+				C: Robot resumed his normal behavior.
 			   
 				C: UNPAUSE
-				S: 2051 Robot is already behaving normally.
+				S: 2051
+				C: Robot is already behaving normally.
 				
 		STATUS
 			
@@ -284,16 +292,20 @@ RFC 2223                        SpaceX                          March 2018
 
 			Examples:
 				C: MOVE U
-				S: 1081 Robot move Up
+				S: 1081 
+				C: Robot move Up
 			
 				C: MOVE D
-				S: 2081 Robot blocked by obstacle
+				S: 2081
+				C: Robot blocked by obstacle
 			
 				C: MOVE A
-				S: 3082 direction not recognized
+				S: 3082
+				C: direction not recognized
 			
 				C: MOVE
-				S: 3081 missing argument : direction (usage : Move dir)
+				S: 3081
+				C: missing argument : direction (usage : Move dir)				
 	
 
 3. Responses Codes
