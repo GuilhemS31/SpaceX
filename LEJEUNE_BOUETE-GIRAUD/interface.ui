@@ -37,12 +37,17 @@
    </property>
    <widget class="QMenu" name="menuSpaceX">
     <property name="title">
-     <string>SpaceX</string>
+     <string>Fichier</string>
     </property>
    </widget>
    <addaction name="menuSpaceX"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionFichier">
+   <property name="text">
+    <string>Fichier</string>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
