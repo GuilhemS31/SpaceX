@@ -2,7 +2,7 @@ from socket import *
 import sys
 
 if len(sys.argv) != 3:
-    print(f"Usage: {sys.argv[0]} <ip> <port>")
+    print(f"Usage: {sys.argv[0]} <ip> <port>", file=sys.stderr)
     sys.exit(1)
 
 TAILLE_TAMPON = 256
