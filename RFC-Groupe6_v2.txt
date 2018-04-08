@@ -318,7 +318,7 @@ RFC 2223                        SpaceX                          March 2018
 	01 for the first command)
 	And finaly, the last digit corresponding is the specifiq number of 
 	command return (1 for first return, 2 for second, etc...)
-	
+	4000 is the return for a command not founded.
 
 4. Authors
 	
