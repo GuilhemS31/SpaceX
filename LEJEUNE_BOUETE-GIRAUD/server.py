@@ -35,9 +35,12 @@ while True:
         file = open("server.log","a")
         file.write(f"{date.today().strftime('%Y/%m/%d')} {datetime.today().strftime('%X')} Received {mess.decode()} from {ip_client}:{port_client}\n")
         file.close()
+        if map_server.client_exists(ip_client) == False:
+            map_server.add_robot(ip_client, Robot('undefined', 5, 5))
         reponse = mess.decode().split(' ')
         commandes = {'help' : 'Commands list : quit, rename, send, pause, unpause, status, info, move',
-                     'info' : str(map_server)}
+                     'info' : str(map_server),
+                     'rename': map_server.get_robot(ip_client).rename(reponse[len(reponse)-1])}
         if reponse[0] in commandes:
             rep = f'100 {commandes[reponse[0]]}'
             sock.sendto(rep.encode(), adr_client)

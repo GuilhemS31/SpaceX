@@ -33,3 +33,138 @@
 2018/04/09 18:14:29 Server started 
 2018/04/09 18:14:29 Listen on :8500 
 2018/04/09 18:14:42 Server stopped...
+2018/04/09 20:28:55 Server started 
+2018/04/09 20:28:55 Listen on :8500 
+2018/04/09 20:29:05 Received help from 127.0.0.1:36428
+2018/04/09 20:29:09 Received info from 127.0.0.1:36428
+2018/04/09 20:40:27 Server stopped...
+2018/04/09 20:40:28 Server started 
+2018/04/09 20:40:28 Listen on :8500 
+2018/04/09 20:40:39 Received help from 127.0.0.1:50975
+2018/04/09 20:41:01 Server started 
+2018/04/09 20:41:01 Listen on :8500 
+2018/04/09 20:41:12 Received help from 127.0.0.1:41826
+2018/04/09 20:43:49 Server started 
+2018/04/09 20:43:49 Listen on :8500 
+2018/04/09 20:43:57 Received help from 127.0.0.1:41515
+2018/04/09 20:45:38 Server started 
+2018/04/09 20:45:38 Listen on :8500 
+2018/04/09 20:45:43 Received help from 127.0.0.1:60151
+2018/04/09 20:45:48 Received info from 127.0.0.1:60151
+2018/04/09 20:48:02 Server stopped...
+2018/04/09 20:48:03 Server started 
+2018/04/09 20:48:03 Listen on :8500 
+2018/04/09 20:48:11 Received info from 127.0.0.1:60151
+2018/04/09 20:48:17 Received info from 127.0.0.1:34280
+2018/04/09 20:48:34 Received info from 127.0.0.1:34280
+2018/04/09 20:48:39 Received info from 127.0.0.1:40380
+2018/04/09 20:52:56 Server stopped...
+2018/04/09 20:58:13 Server started 
+2018/04/09 20:58:13 Listen on :8500 
+2018/04/09 20:58:17 Received rename from 127.0.0.1:60706
+2018/04/09 20:58:54 Server stopped...
+2018/04/09 20:58:55 Server started 
+2018/04/09 20:58:55 Listen on :8500 
+2018/04/09 20:59:01 Received info from 127.0.0.1:60706
+2018/04/09 21:00:30 Server started 
+2018/04/09 21:00:30 Listen on :8500 
+2018/04/09 21:00:35 Received info from 127.0.0.1:58452
+2018/04/09 21:01:19 Server stopped...
+2018/04/09 21:01:21 Server started 
+2018/04/09 21:01:21 Listen on :8500 
+2018/04/09 21:01:24 Received [A from 127.0.0.1:58452
+2018/04/09 21:01:32 Received info from 127.0.0.1:48500
+2018/04/09 21:01:36 Received info from 127.0.0.1:48500
+2018/04/09 21:02:09 Server stopped...
+2018/04/09 21:02:10 Server started 
+2018/04/09 21:02:10 Listen on :8500 
+2018/04/09 21:02:15 Received info from 127.0.0.1:48500
+2018/04/09 21:02:25 Received info from 127.0.0.1:47556
+2018/04/09 21:02:35 Received info from 127.0.0.1:46461
+2018/04/09 21:04:07 Server stopped...
+2018/04/09 21:04:08 Server started 
+2018/04/09 21:04:08 Listen on :8500 
+2018/04/09 21:04:12 Received info from 127.0.0.1:46461
+2018/04/09 21:04:17 Received info from 127.0.0.1:38505
+2018/04/09 21:11:58 Server stopped...
+2018/04/09 21:11:58 Server started 
+2018/04/09 21:11:58 Listen on :8500 
+2018/04/09 21:12:03 Received info from 127.0.0.1:52430
+2018/04/09 21:17:17 Server started 
+2018/04/09 21:17:17 Listen on :8500 
+2018/04/09 21:17:26 Received info from 127.0.0.1:46260
+2018/04/09 21:17:45 Server started 
+2018/04/09 21:17:45 Listen on :8500 
+2018/04/09 21:18:04 Received info from 127.0.0.1:53829
+2018/04/09 21:24:54 Received info from 127.0.0.1:57688
+2018/04/09 21:34:03 Server stopped...
+2018/04/09 21:34:04 Server started 
+2018/04/09 21:34:04 Listen on :8500 
+2018/04/09 21:34:12 Received info from 127.0.0.1:46456
+2018/04/09 21:34:16 Received info from 127.0.0.1:60941
+2018/04/09 21:34:50 Server stopped...
+2018/04/09 21:38:48 Server started 
+2018/04/09 21:38:48 Listen on :8500 
+2018/04/09 21:38:51 Received info from 127.0.0.1:60941
+2018/04/09 21:38:56 Received rename 'coucou' from 127.0.0.1:60941
+2018/04/09 21:43:04 Server stopped...
+2018/04/09 21:43:05 Server started 
+2018/04/09 21:43:05 Listen on :8500 
+2018/04/09 21:43:10 Received info from 127.0.0.1:38589
+2018/04/09 21:43:16 Received info from 127.0.0.1:54819
+2018/04/09 22:02:36 Server stopped...
+2018/04/09 22:02:37 Server started 
+2018/04/09 22:02:37 Listen on :8500 
+2018/04/09 22:02:44 Received *info from 127.0.0.1:49048
+2018/04/09 22:02:47 Received info from 127.0.0.1:49048
+2018/04/09 22:03:05 Server stopped...
+2018/04/09 22:03:06 Server started 
+2018/04/09 22:03:06 Listen on :8500 
+2018/04/09 22:03:14 Received info from 127.0.0.1:49048
+2018/04/09 22:06:12 Server stopped...
+2018/04/09 22:06:13 Server started 
+2018/04/09 22:06:13 Listen on :8500 
+2018/04/09 22:06:24 Received info from 127.0.0.1:48816
+2018/04/09 22:06:33 Received info from 127.0.0.1:48203
+2018/04/09 23:02:56 Server stopped...
+2018/04/09 23:02:57 Server started 
+2018/04/09 23:02:57 Listen on :8500 
+2018/04/09 23:03:05 Received help from 127.0.0.1:55520
+2018/04/09 23:03:54 Server started 
+2018/04/09 23:03:54 Listen on :8500 
+2018/04/09 23:03:59 Received help from 127.0.0.1:33628
+2018/04/09 23:04:03 Received info from 127.0.0.1:33628
+2018/04/09 23:04:07 Received info from 127.0.0.1:55793
+2018/04/09 23:05:01 Server stopped...
+2018/04/09 23:05:01 Server started 
+2018/04/09 23:05:01 Listen on :8500 
+2018/04/09 23:05:07 Received rename coucou from 127.0.0.1:55793
+2018/04/09 23:05:14 Received info from 127.0.0.1:55793
+2018/04/09 23:05:35 Server started 
+2018/04/09 23:05:35 Listen on :8500 
+2018/04/09 23:05:45 Received info from 127.0.0.1:33000
+2018/04/09 23:07:18 Server started 
+2018/04/09 23:07:18 Listen on :8500 
+2018/04/09 23:07:22 Received info from 127.0.0.1:35567
+2018/04/09 23:07:30 Received rename 'nicolas' from 127.0.0.1:35567
+2018/04/09 23:07:33 Received info from 127.0.0.1:35567
+2018/04/09 23:07:38 Received rename nicolas from 127.0.0.1:35567
+2018/04/09 23:07:44 Received info from 127.0.0.1:35567
+2018/04/09 23:11:25 Server stopped...
+2018/04/09 23:11:26 Server started 
+2018/04/09 23:11:26 Listen on :8500 
+2018/04/09 23:11:31 Received rename from 127.0.0.1:35567
+2018/04/09 23:12:26 Server stopped...
+2018/04/09 23:12:27 Server started 
+2018/04/09 23:12:27 Listen on :8500 
+2018/04/09 23:12:32 Received rename from 127.0.0.1:35567
+2018/04/09 23:12:58 Server stopped...
+2018/04/09 23:12:58 Server started 
+2018/04/09 23:12:58 Listen on :8500 
+2018/04/09 23:13:01 Received rename from 127.0.0.1:35567
+2018/04/09 23:13:16 Server stopped...
+2018/04/09 23:13:16 Server started 
+2018/04/09 23:13:16 Listen on :8500 
+2018/04/09 23:13:19 Received rename from 127.0.0.1:35567
+2018/04/09 23:13:26 Received rename nicolas from 127.0.0.1:35567
+2018/04/09 23:13:30 Received info from 127.0.0.1:35567

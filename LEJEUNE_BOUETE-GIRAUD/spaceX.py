@@ -3,14 +3,14 @@ class Map:
     def __init__(self, nb_lines, nb_columns):
         self.lines = nb_lines
         self.columns = nb_columns
-        self.robots_list = []
+        self.robots_list = {}
         self.resources_list = []
         self.obstacles_list = []
 
-    def add_robot(self, robot):
+    def add_robot(self, adresse_client, robot):
         if robot.line < 0 or robot.line > self.lines or robot.column < 0 or robot.column > self.columns:
             return self
-        self.robots_list.append(robot)
+        self.robots_list[adresse_client] = robot
 
     def add_resource(self, resource):
         if resource.line < 0 or resource.line > self.lines or resource.column < 0 or resource.column > self.columns:
@@ -22,8 +22,8 @@ class Map:
             return self
         self.obstacles_list.append(obstacle)
 
-    def delete_robot(self, robot):
-        self.robots_list.remove(robot)
+    def delete_robot(self, adresse_client):
+        self.robots_list[adresse_client] = None
 
     def delete_resource(self, resource):
         self.resources_list.remove(resource)
@@ -33,11 +33,20 @@ class Map:
 
     def __str__(self):
         result = "ROBOTS : \n"
-        for robot in self.robots_list:
+        for robot in self.robots_list.values():
             result = result + str(robot) + "\n"
         return result
 
-    def move_robot(self, robot, direction):
+    def get_robot(self, adresse_client):
+        return self.robots_list[adresse_client]
+
+    def client_exists(self, adresse_client):
+        if adresse_client in self.robots_list:
+            return True
+        else:
+            return False
+
+    def move_robot(self, adresse_client, direction):
         options = {
             'u' : moveUp,
             'd' : moveDown,
@@ -46,7 +55,7 @@ class Map:
             '' : 'Missing argument : direction (usage : move <direction>)'
         }
         if direction in options:
-            return options[direction]()
+            return options[direction](self.robots_list[adresse_client])
         else:
             return 'Direction not recognized'
 
@@ -114,7 +123,11 @@ class Robot:
             self.state = False
 
     def rename(self, new_username):
+        if new_username == 'rename':
+            return 'Missing argument (usage : rename <name>)'
         self.username = new_username
+        return 'Rename successful'
+
 
     def __str__(self):
         result = "USERNAME : " + self.username + "\n"
