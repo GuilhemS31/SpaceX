@@ -37,6 +37,38 @@ class Map:
             result = result + str(robot) + "\n"
         return result
 
+    def move_robot(self, robot, direction):
+        options = {
+            'u' : moveUp,
+            'd' : moveDown,
+            'l' : moveLeft,
+            'r' : moveRight
+            '' : 'Missing argument : direction (usage : move <direction>)'
+        }
+        if direction in options:
+            return options[direction]()
+        else:
+            return 'Direction not recognized'
+
+    def moveUp(self, robot):
+        blocked = 'Robot blocked by obstacle'
+        for obstacle in self.obstacles_list:
+            if robot.line == obstacle.line - 1:
+                return blocked
+        if robot.line == self.lines - 1:
+            return blocked
+        robot.line = robot.line + 1
+        return
+
+    def moveDown(self, robot):
+
+
+    def moveLeft(self, robot):
+
+
+    def moveRight(self, robot):
+
+
 class Robot:
 
     def __init__(self, _username, pos_line, pos_column):
@@ -68,6 +100,7 @@ class Robot:
         for resource in self.resources_list:
             result = result + resource + "\n"
         return result
+
 
 class Resource:
 
