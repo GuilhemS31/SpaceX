@@ -42,7 +42,7 @@ class Map:
             'u' : moveUp,
             'd' : moveDown,
             'l' : moveLeft,
-            'r' : moveRight
+            'r' : moveRight,
             '' : 'Missing argument : direction (usage : move <direction>)'
         }
         if direction in options:
@@ -58,15 +58,37 @@ class Map:
         if robot.line == self.lines - 1:
             return blocked
         robot.line = robot.line + 1
-        return
+        return self
 
     def moveDown(self, robot):
-
+        blocked = 'Robot blocked by obstacle'
+        for obstacle in self.obstacles_list:
+            if robot.line == obstacle.line + 1:
+                return blocked
+        if robot.line == self.lines + 1:
+            return blocked
+        robot.line = robot.line - 1
+        return self
 
     def moveLeft(self, robot):
-
+        blocked = 'Robot blocked by obstacle'
+        for obstacle in self.obstacles_list:
+            if robot.column == obstacle.column + 1:
+                return blocked
+        if robot.column == self.column + 1:
+            return blocked
+        robot.column = robot.column - 1
+        return self
 
     def moveRight(self, robot):
+        blocked = 'Robot blocked by obstacle'
+        for obstacle in self.obstacles_list:
+            if robot.column == obstacle.column - 1:
+                return blocked
+        if robot.column == self.column - 1:
+            return blocked
+        robot.column = robot.column + 1
+        return self
 
 
 class Robot:
