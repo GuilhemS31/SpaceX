@@ -31,6 +31,12 @@ class Map:
     def delete_obstacle(self, obstacle):
         self.obstacles_list.remove(obstacle)
 
+    def __str__(self):
+        result = "ROBOTS : \n"
+        for robot in self.robots_list:
+            result = result + str(robot) + "\n"
+        return result
+
 class Robot:
 
     def __init__(self, _username, pos_line, pos_column):
@@ -56,11 +62,22 @@ class Robot:
     def rename(self, new_username):
         self.username = new_username
 
+    def __str__(self):
+        result = "USERNAME : " + self.username + "\n"
+        result = result + "RESOURCES : \n"
+        for resource in self.resources_list:
+            result = result + resource + "\n"
+        return result
+
 class Resource:
 
-    def __init__(self, pos_line, pos_column):
+    def __init__(self, r_name, pos_line, pos_column):
+        self.name = r_name
         self.line = pos_line
         self.column = pos_column
+
+    def __str__(self):
+        return self.name
 
 
 class Obstacle:
