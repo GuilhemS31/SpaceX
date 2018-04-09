@@ -1,6 +1,7 @@
 from socket import *
 import sys, threading, os, os.path, re, datetime, configparser
-import spaceX
+#import spaceX
+from spaceX import Map
 
 if len(sys.argv) != 1:
     print(f"Usage: {sys.argv[0]}")
@@ -30,6 +31,8 @@ sock_server = socket()
 sock_server.bind(("", (int)(config['DEFAULT']['port'])))
 sock_server.listen(4)
 
+mapServ = Map()
+
 with open(config['DEFAULT']['log'], "a") as logFic:
 	logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Serveur en attente sur le port " + config['DEFAULT']['port'])
 
@@ -42,6 +45,7 @@ while True:
 
 		cmd = sock_client.recv(255)
 		switch(cmd)
+		print(mapServ)
 		#return nouvelle Map
 	except KeyboardInterrupt:
 		break
