@@ -8,17 +8,17 @@ class Map:
         self.obstacles_list = []
 
     def add_robot(self, robot):
-        if robot.line < 0 or robot.line > nb_lines or robot.column < 0 or robot.column > nb_columns:
+        if robot.line < 0 or robot.line > self.lines or robot.column < 0 or robot.column > self.columns:
             return self
         self.robots_list.append(robot)
 
     def add_resource(self, resource):
-        if resource.line < 0 or resource.line > nb_lines or resource.column < 0 or resource.column > nb_columns:
+        if resource.line < 0 or resource.line > self.lines or resource.column < 0 or resource.column > self.columns:
             return self
         self.resources_list.append(resource)
 
     def add_obstacle(self, obstacle):
-        if obstacle.line < 0 or obstacle.line > nb_lines or obstacle.column < 0 or obstacle.column > nb_columns:
+        if obstacle.line < 0 or obstacle.line > self.lines or obstacle.column < 0 or obstacle.column > self.columns:
             return self
         self.obstacles_list.append(obstacle)
 
