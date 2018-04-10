@@ -25,9 +25,9 @@ except AttributeError:
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName(_fromUtf8("Dialog"))
-        Dialog.resize(617, 442)
+        Dialog.resize(620, 440)
         self.verticalLayoutWidget_2 = QtGui.QWidget(Dialog)
-        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 601, 421))
+        self.verticalLayoutWidget_2.setGeometry(QtCore.QRect(10, 10, 600, 420))
         self.verticalLayoutWidget_2.setObjectName(_fromUtf8("verticalLayoutWidget_2"))
         self.verticalLayout_2 = QtGui.QVBoxLayout(self.verticalLayoutWidget_2)
         self.verticalLayout_2.setObjectName(_fromUtf8("verticalLayout_2"))
@@ -49,6 +49,7 @@ class Ui_Dialog(object):
         self.verticalLayout.addWidget(self.Command)
         self.Send = QtGui.QPushButton(self.verticalLayoutWidget_2)
         self.Send.setObjectName(_fromUtf8("Send"))
+        #self.Send.clicked.connect(self.on_clic)
         self.verticalLayout.addWidget(self.Send)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
@@ -56,6 +57,20 @@ class Ui_Dialog(object):
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+    @QtCore.pyqtSlot()
+    def on_Send_clicked(self):
+        com = self.Command.text()
+
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
         self.Send.setText(_translate("Dialog", "Send", None))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    Dialog = QtGui.QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
+    sys.exit(app.exec_())
