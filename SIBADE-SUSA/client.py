@@ -1,4 +1,5 @@
 from socket import *
+import interface.py
 import sys
 
 if len(sys.argv) != 3:
@@ -9,7 +10,7 @@ TAILLE_TAMPON = 256
 with socket(AF_INET, SOCK_DGRAM)as sock:
     while True:
         # Remarque : pas besoin de bind car le port local est choisi par le système
-        mess = input("Entrez votre message : ")
+        mess = returnText(text)
 
         if (mess == "quit"):
             print("Merci d'avoir utiliser serveur client,  Aurevoir")
@@ -19,3 +20,7 @@ with socket(AF_INET, SOCK_DGRAM)as sock:
         # Réception de la réponse du serveur et décodage de bytes en str
         reponse, _ = sock.recvfrom(TAILLE_TAMPON)
         print("Réponse = " + reponse.decode())
+
+def returnText(text):
+    print ("$=>")
+    return ""+text

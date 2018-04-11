@@ -6,7 +6,8 @@
 #
 # WARNING! All changes made in this file will be lost!
 import sys
-from PyQt4 import QtCore, QtGui
+#import client.py
+from PyQt5 import QtCore, QtGui
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -60,6 +61,7 @@ class Ui_Dialog(object):
     @QtCore.pyqtSlot()
     def on_Send_clicked(self):
         com = self.Command.text()
+        #client.returnText(com)
 
     def retranslateUi(self, Dialog):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog", None))
