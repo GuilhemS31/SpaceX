@@ -32,6 +32,7 @@ class Robot():
 		self.__posY = y
 		self.__name = name
 		self.__ress = 0
+		self.__actif = False
 		
 	@property
 	def posX(self) : return self.__posX
@@ -39,10 +40,16 @@ class Robot():
 	def posY(self) : return self.__posY
 	@property
 	def name(self) : return self.__name
+	@name.setter
+	def name(self,newName) : self.__name = newName
 	@property
 	def ress(self) : return self.__ress
 	@ress.setter
 	def ress(self) : self.__ress += 1
+	@property
+	def actif(self) : return self.__actif 
+	@actif.setter
+	def actif(self,mode) : self.__actif = mode
 		
 
 class Map:
@@ -52,11 +59,9 @@ class Map:
 		while cpt < 5:
 			x = random.randint(0,10)
 			y = random.randint(0,10)
-			
-			print (f"{x},{y}")
-			
-			if self.__grid[x][y].isObs == False :
-				self.__grid[x][y].isRess = True
+						
+			if self.__grid[y][x].isObs == False :
+				self.__grid[y][x].isRess = True
 				cpt += 1
 			
 	
@@ -90,11 +95,19 @@ class Map:
 		self.__listRobot = {}
 		self.refreshRess()
 		
+	@property
+	def listRobot(self) : return self.__listRobot
+	
 	def __str__(self):
 		ret = ""
 		for lig in self.__grid:
 			ret += "|"
 			for col in lig:
+				"""
+				if robot in lig,col
+					then R
+				else:
+				"""
 				ret+= str(col) +"|"
 			ret += "\n"
 		return ret
