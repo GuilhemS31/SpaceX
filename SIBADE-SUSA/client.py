@@ -1,6 +1,7 @@
 from socket import *
-import interface.py
+import interfacev2.py
 import sys
+os.system("first.py -i " + monfichier)
 
 if len(sys.argv) != 3:
     print(f"Usage: {sys.argv[0]} <ip> <port>", file=sys.stderr)

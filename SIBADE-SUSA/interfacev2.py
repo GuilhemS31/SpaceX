@@ -7,6 +7,7 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+#import client.py
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -52,7 +53,7 @@ class Ui_Dialog(object):
     def on_Send_clicked(self):
         com = self.Command.text()
         #client.returnText(com)
-        
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
