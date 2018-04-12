@@ -168,3 +168,339 @@
 2018/04/09 23:13:19 Received rename from 127.0.0.1:35567
 2018/04/09 23:13:26 Received rename nicolas from 127.0.0.1:35567
 2018/04/09 23:13:30 Received info from 127.0.0.1:35567
+2018/04/10 10:03:05 Server stopped...
+2018/04/10 10:03:06 Server started 
+2018/04/10 10:03:06 Listen on :8500 
+2018/04/10 10:03:13 Received help from 127.0.0.1:37757
+2018/04/10 10:03:15 Received info from 127.0.0.1:37757
+2018/04/10 10:03:15 Received  from 127.0.0.1:37757
+2018/04/10 10:03:30 Received rename nicolas from 127.0.0.1:37757
+2018/04/10 10:03:32 Received info from 127.0.0.1:37757
+2018/04/10 10:19:07 Server stopped...
+2018/04/10 10:19:08 Server started 
+2018/04/10 10:19:08 Listen on :8500 
+2018/04/10 10:20:41 Server started 
+2018/04/10 10:20:41 Listen on :8500 
+2018/04/10 10:20:50 Received help from 127.0.0.1:60235
+2018/04/10 10:20:56 Received info from 127.0.0.1:60235
+2018/04/10 10:53:07 Server stopped...
+2018/04/10 10:53:08 Server started 
+2018/04/10 10:53:08 Listen on :8500 
+2018/04/10 10:53:11 Received info from 127.0.0.1:60235
+2018/04/10 10:53:13 Received help from 127.0.0.1:60235
+2018/04/10 10:53:15 Received info from 127.0.0.1:60235
+2018/04/10 10:53:53 Received info from 127.0.0.1:60235
+2018/04/10 10:53:55 Received info from 127.0.0.1:60235
+2018/04/10 11:10:22 Server stopped...
+2018/04/10 11:10:23 Server started 
+2018/04/10 11:10:23 Listen on :8500 
+2018/04/10 11:10:28 Received info from 127.0.0.1:44755
+2018/04/10 11:26:17 Server started 
+2018/04/10 11:26:17 Listen on :8500 
+2018/04/10 11:26:20 Received help from 127.0.0.1:52008
+2018/04/10 11:26:27 Received info from 127.0.0.1:52008
+2018/04/10 11:27:04 Server stopped...
+2018/04/10 11:27:05 Server started 
+2018/04/10 11:27:05 Listen on :8500 
+2018/04/10 11:27:10 Received help from 127.0.0.1:45064
+2018/04/10 11:27:12 Received info from 127.0.0.1:45064
+2018/04/10 11:33:57 Server stopped...
+2018/04/10 11:34:37 Server started 
+2018/04/10 11:34:37 Listen on :8500 
+2018/04/10 11:34:42 Received help from 127.0.0.1:33401
+2018/04/10 11:34:46 Received info from 127.0.0.1:33401
+2018/04/10 11:34:54 Received rename nicolas from 127.0.0.1:33401
+2018/04/10 11:34:56 Received info from 127.0.0.1:33401
+2018/04/10 11:36:17 Server stopped...
+2018/04/10 11:36:18 Server started 
+2018/04/10 11:36:18 Listen on :8500 
+2018/04/10 11:36:29 Received help from 127.0.0.1:40210
+2018/04/10 11:36:31 Received info from 127.0.0.1:40210
+2018/04/10 11:36:43 Received rename nicolas from 127.0.0.1:40210
+2018/04/10 11:37:59 Server started 
+2018/04/10 11:37:59 Listen on :8500 
+2018/04/10 11:38:04 Received info from 127.0.0.1:35855
+2018/04/10 11:38:08 Received rename nicolas from 127.0.0.1:35855
+2018/04/10 11:40:04 Server started 
+2018/04/10 11:40:04 Listen on :8500 
+2018/04/10 11:40:08 Received info from 127.0.0.1:59387
+2018/04/10 11:40:12 Received rename nicolas from 127.0.0.1:59387
+2018/04/10 11:41:59 Server started 
+2018/04/10 11:41:59 Listen on :8500 
+2018/04/10 11:42:08 Received rename nicolas from 127.0.0.1:34923
+2018/04/10 11:43:02 Server started 
+2018/04/10 11:43:02 Listen on :8500 
+2018/04/10 11:43:08 Received rename nicolas from 127.0.0.1:60969
+2018/04/10 11:45:36 Server started 
+2018/04/10 11:45:36 Listen on :8500 
+2018/04/10 11:45:45 Received rename nicolas from 127.0.0.1:58378
+2018/04/10 11:45:52 Received info from 127.0.0.1:58378
+2018/04/10 11:45:55 Received move u from 127.0.0.1:58378
+2018/04/10 11:46:37 Server stopped...
+2018/04/10 11:46:38 Server started 
+2018/04/10 11:46:38 Listen on :8500 
+2018/04/10 11:46:44 Received move u from 127.0.0.1:53254
+2018/04/10 11:47:03 Received move l from 127.0.0.1:53254
+2018/04/10 11:47:07 Received move d from 127.0.0.1:53254
+2018/04/10 11:47:10 Received move r from 127.0.0.1:53254
+2018/04/10 11:47:22 Received move r from 127.0.0.1:53254
+2018/04/10 11:48:39 Received info from 127.0.0.1:53254
+2018/04/10 11:48:44 Received rename eric from 127.0.0.1:53254
+2018/04/10 11:48:47 Received info from 127.0.0.1:53254
+2018/04/10 11:48:49 Received move r from 127.0.0.1:53254
+2018/04/10 16:59:38 Server stopped...
+2018/04/10 16:59:40 Server started 
+2018/04/10 16:59:40 Listen on :8500 
+2018/04/10 16:59:43 Received info from 127.0.0.1:53254
+2018/04/10 16:59:46 Received move r from 127.0.0.1:53254
+2018/04/10 17:00:52 Server stopped...
+2018/04/10 17:01:00 Server started 
+2018/04/10 17:01:00 Listen on :8500 
+2018/04/10 17:01:04 Received help from 127.0.0.1:55192
+2018/04/10 17:01:07 Received info from 127.0.0.1:55192
+2018/04/10 17:01:10 Received move r from 127.0.0.1:55192
+2018/04/10 17:01:21 Received move  from 127.0.0.1:55192
+2018/04/10 17:01:50 Server stopped...
+2018/04/10 17:01:50 Server started 
+2018/04/10 17:01:50 Listen on :8500 
+2018/04/10 17:01:53 Received info from 127.0.0.1:55192
+2018/04/10 17:01:58 Received move r from 127.0.0.1:55192
+2018/04/10 17:02:16 Received rename nicolas from 127.0.0.1:55192
+2018/04/10 17:02:19 Received info from 127.0.0.1:55192
+2018/04/10 17:04:27 Server stopped...
+2018/04/10 17:04:28 Server started 
+2018/04/10 17:04:28 Listen on :8500 
+2018/04/10 17:04:36 Received move l from 127.0.0.1:50712
+2018/04/10 17:04:40 Received move u from 127.0.0.1:50712
+2018/04/10 17:04:44 Received move d from 127.0.0.1:50712
+2018/04/10 17:04:47 Received move r from 127.0.0.1:50712
+2018/04/10 17:20:24 Server stopped...
+2018/04/10 17:20:26 Server started 
+2018/04/10 17:20:26 Listen on :8500 
+2018/04/10 17:20:30 Received help from 127.0.0.1:37121
+2018/04/10 17:20:35 Received move up from 127.0.0.1:37121
+2018/04/10 17:20:40 Received move u from 127.0.0.1:37121
+2018/04/10 17:25:15 Server started 
+2018/04/10 17:25:15 Listen on :8500 
+2018/04/10 17:25:19 Received rename nicolas from 127.0.0.1:57559
+2018/04/10 17:25:24 Received info from 127.0.0.1:57559
+2018/04/10 17:25:30 Received nicolas from 127.0.0.1:57559
+2018/04/10 17:25:39 Received info from 127.0.0.1:57559
+2018/04/10 17:26:22 Received info from 127.0.0.1:57559
+2018/04/10 17:27:14 Received info from 127.0.0.1:57559
+2018/04/10 17:27:17 Received help from 127.0.0.1:57559
+2018/04/10 17:28:20 Received rename nicolas from 127.0.0.1:57559
+2018/04/10 17:28:50 Server started 
+2018/04/10 17:28:50 Listen on :8500 
+2018/04/10 17:28:53 Received help from 127.0.0.1:38743
+2018/04/10 17:28:58 Received info from 127.0.0.1:38743
+2018/04/10 17:29:05 Received rename nicolas from 127.0.0.1:38743
+2018/04/10 17:29:09 Received info from 127.0.0.1:38743
+2018/04/10 17:30:06 Server stopped...
+2018/04/10 17:30:07 Server started 
+2018/04/10 17:30:07 Listen on :8500 
+2018/04/10 17:30:13 Received info from 127.0.0.1:60003
+2018/04/10 17:30:17 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:37 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:40 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:42 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:44 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:47 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:49 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:51 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:53 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:56 Received move u from 127.0.0.1:60003
+2018/04/10 17:30:58 Received move u from 127.0.0.1:60003
+2018/04/10 17:31:38 Server stopped...
+2018/04/10 17:31:38 Server started 
+2018/04/10 17:31:38 Listen on :8500 
+2018/04/10 17:31:42 Received move u from 127.0.0.1:60003
+2018/04/10 17:31:45 Received info from 127.0.0.1:60003
+2018/04/10 17:31:53 Received mover from 127.0.0.1:60003
+2018/04/10 17:31:55 Received info from 127.0.0.1:60003
+2018/04/10 17:35:26 Server stopped...
+2018/04/10 17:35:27 Server started 
+2018/04/10 17:35:27 Listen on :8500 
+2018/04/10 17:35:32 Received info from 127.0.0.1:60003
+2018/04/10 17:35:37 Received rename nicolas from 127.0.0.1:60003
+2018/04/10 17:35:40 Received info from 127.0.0.1:60003
+2018/04/10 17:35:42 Received move u from 127.0.0.1:60003
+2018/04/10 17:35:45 Received info from 127.0.0.1:60003
+2018/04/10 17:44:21 Received move r from 127.0.0.1:60003
+2018/04/10 17:44:25 Received info from 127.0.0.1:60003
+2018/04/10 17:45:00 Server stopped...
+2018/04/10 17:45:01 Server started 
+2018/04/10 17:45:01 Listen on :8500 
+2018/04/10 17:45:04 Received info from 127.0.0.1:60003
+2018/04/10 17:45:07 Received move r from 127.0.0.1:60003
+2018/04/10 17:45:11 Received info from 127.0.0.1:60003
+2018/04/11 21:28:28 Received info from 127.0.0.1:57971
+2018/04/11 21:28:32 Received move u from 127.0.0.1:57971
+2018/04/11 21:28:34 Received info from 127.0.0.1:57971
+2018/04/11 21:29:13 Received info from 127.0.0.1:57971
+2018/04/11 21:29:18 Received help from 127.0.0.1:57971
+2018/04/11 21:49:30 Received help from 127.0.0.1:52003
+2018/04/11 21:49:42 Received info from 127.0.0.1:52003
+2018/04/11 22:02:47 Received info from 127.0.0.1:60004
+2018/04/11 22:05:20 Received help from 127.0.0.1:50047
+2018/04/11 22:05:29 Server stopped...
+2018/04/11 22:05:30 Server started 
+2018/04/11 22:05:30 Listen on :8500 
+2018/04/11 22:05:33 Received help from 127.0.0.1:50047
+2018/04/11 22:05:36 Received move u from 127.0.0.1:50047
+2018/04/11 22:06:12 Server stopped...
+2018/04/11 22:07:23 Server started 
+2018/04/11 22:07:23 Listen on :8500 
+2018/04/11 22:07:27 Received info from 127.0.0.1:50047
+2018/04/11 22:07:43 Received move u from 127.0.0.1:50047
+2018/04/11 22:07:50 Received info from 127.0.0.1:50047
+2018/04/11 22:07:53 Received move u from 127.0.0.1:50047
+2018/04/11 22:08:01 Received rename nicolas from 127.0.0.1:50047
+2018/04/11 22:08:29 Server stopped...
+2018/04/11 22:08:30 Server started 
+2018/04/11 22:08:30 Listen on :8500 
+2018/04/11 22:08:37 Received help from 127.0.0.1:39473
+2018/04/11 22:08:40 Received info from 127.0.0.1:39473
+2018/04/11 22:08:45 Received rename nicolas from 127.0.0.1:39473
+2018/04/11 22:08:47 Received info from 127.0.0.1:39473
+2018/04/11 22:08:50 Received move u from 127.0.0.1:39473
+2018/04/11 22:08:55 Received info from 127.0.0.1:39473
+2018/04/11 22:13:50 Received help from 127.0.0.1:49859
+2018/04/11 22:14:06 Received info from 127.0.0.1:49859
+2018/04/11 22:14:12 Server stopped...
+2018/04/11 22:14:12 Server started 
+2018/04/11 22:14:12 Listen on :8500 
+2018/04/11 22:14:15 Received info from 127.0.0.1:49859
+2018/04/11 22:14:20 Received move u from 127.0.0.1:49859
+2018/04/11 22:14:25 Received info from 127.0.0.1:49859
+2018/04/11 22:15:18 Server stopped...
+2018/04/11 22:15:19 Server started 
+2018/04/11 22:15:19 Listen on :8500 
+2018/04/11 22:15:22 Received info from 127.0.0.1:49859
+2018/04/11 22:15:29 Received move u from 127.0.0.1:49859
+2018/04/11 22:15:31 Received info from 127.0.0.1:49859
+2018/04/11 22:17:50 Server stopped...
+2018/04/11 22:17:51 Server started 
+2018/04/11 22:17:51 Listen on :8500 
+2018/04/11 22:17:54 Received info from 127.0.0.1:49859
+2018/04/11 22:17:57 Received move u from 127.0.0.1:49859
+2018/04/11 22:18:00 Received info from 127.0.0.1:49859
+2018/04/11 22:27:57 Server stopped...
+2018/04/11 22:27:58 Server started 
+2018/04/11 22:27:58 Listen on :8500 
+2018/04/11 22:28:01 Received info from 127.0.0.1:49859
+2018/04/11 22:30:23 Server started 
+2018/04/11 22:30:23 Listen on :8500 
+2018/04/11 22:30:28 Received info from 127.0.0.1:37340
+2018/04/11 22:31:19 Server started 
+2018/04/11 22:31:19 Listen on :8500 
+2018/04/11 22:31:24 Received info from 127.0.0.1:53458
+2018/04/11 22:31:48 Server started 
+2018/04/11 22:31:48 Listen on :8500 
+2018/04/11 22:31:51 Received info from 127.0.0.1:52156
+2018/04/11 22:32:00 Received rename nicolas from 127.0.0.1:52156
+2018/04/11 22:32:05 Received move u from 127.0.0.1:52156
+2018/04/11 22:34:42 Server stopped...
+2018/04/11 22:34:43 Server started 
+2018/04/11 22:34:43 Listen on :8500 
+2018/04/11 22:34:47 Received info from 127.0.0.1:52156
+2018/04/11 22:34:52 Received rename nicolas from 127.0.0.1:52156
+2018/04/11 22:35:29 Server stopped...
+2018/04/11 22:35:30 Server started 
+2018/04/11 22:35:30 Listen on :8500 
+2018/04/11 22:35:39 Received info from 127.0.0.1:52156
+2018/04/11 22:35:43 Received rename nicolas from 127.0.0.1:52156
+2018/04/11 22:35:48 Received info from 127.0.0.1:52156
+2018/04/11 22:40:01 Server stopped...
+2018/04/11 22:40:02 Server started 
+2018/04/11 22:40:02 Listen on :8500 
+2018/04/11 22:40:07 Received help from 127.0.0.1:48331
+2018/04/11 22:40:09 Received move u from 127.0.0.1:48331
+2018/04/11 22:40:11 Received info from 127.0.0.1:48331
+2018/04/11 22:43:12 Server stopped...
+2018/04/11 22:43:13 Server started 
+2018/04/11 22:43:13 Listen on :8500 
+2018/04/11 22:43:19 Received info from 127.0.0.1:48925
+2018/04/11 22:43:24 Received rename nicolas from 127.0.0.1:48925
+2018/04/11 22:43:27 Received move u from 127.0.0.1:48925
+2018/04/11 22:43:38 Received info from 127.0.0.1:48925
+2018/04/12 09:20:56 Server stopped...
+2018/04/12 09:20:57 Server started 
+2018/04/12 09:20:57 Listen on :8500 
+2018/04/12 09:21:02 Received info from 127.0.0.1:48925
+2018/04/12 09:21:05 Received rename nicolas from 127.0.0.1:48925
+2018/04/12 09:21:07 Received move u from 127.0.0.1:48925
+2018/04/12 09:21:08 Received info from 127.0.0.1:48925
+2018/04/12 09:21:31 Server stopped...
+2018/04/12 09:21:33 Server started 
+2018/04/12 09:21:33 Listen on :8500 
+2018/04/12 09:21:36 Received move u from 127.0.0.1:48925
+2018/04/12 09:21:41 Received info from 127.0.0.1:48925
+2018/04/12 09:21:46 Received rename nicolas from 127.0.0.1:48925
+2018/04/12 09:22:34 Server stopped...
+2018/04/12 09:22:35 Server started 
+2018/04/12 09:22:35 Listen on :8500 
+2018/04/12 09:22:38 Received move u from 127.0.0.1:48925
+2018/04/12 09:22:53 Received info from 127.0.0.1:48925
+2018/04/12 09:29:21 Server stopped...
+2018/04/12 09:29:23 Server started 
+2018/04/12 09:29:23 Listen on :8500 
+2018/04/12 09:29:25 Received info from 127.0.0.1:48925
+2018/04/12 09:29:29 Received move r from 127.0.0.1:48925
+2018/04/12 09:29:32 Received info from 127.0.0.1:48925
+2018/04/12 09:29:36 Received move k from 127.0.0.1:48925
+2018/04/12 09:29:39 Received info from 127.0.0.1:48925
+2018/04/12 09:42:44 Server stopped...
+2018/04/12 09:42:44 Server started 
+2018/04/12 09:42:44 Listen on :8500 
+2018/04/12 09:42:47 Received info from 127.0.0.1:48925
+2018/04/12 09:42:50 Received rename nicolas from 127.0.0.1:48925
+2018/04/12 09:42:53 Received info from 127.0.0.1:48925
+2018/04/12 09:42:57 Received move u from 127.0.0.1:48925
+2018/04/12 09:42:59 Received info from 127.0.0.1:48925
+2018/04/12 09:47:00 Server stopped...
+2018/04/12 09:47:01 Server started 
+2018/04/12 09:47:01 Listen on :8500 
+2018/04/12 09:47:04 Received info from 127.0.0.1:48925
+2018/04/12 09:47:09 Received rename nicolas from 127.0.0.1:48925
+2018/04/12 09:47:11 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:36 Server stopped...
+2018/04/12 09:48:37 Server started 
+2018/04/12 09:48:37 Listen on :8500 
+2018/04/12 09:48:39 Received info from 127.0.0.1:48925
+2018/04/12 09:48:42 Received rename nicolas from 127.0.0.1:48925
+2018/04/12 09:48:44 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:46 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:48 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:50 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:52 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:54 Received move u from 127.0.0.1:48925
+2018/04/12 09:48:56 Received move u from 127.0.0.1:48925
+2018/04/12 09:50:05 Server stopped...
+2018/04/12 09:50:06 Server started 
+2018/04/12 09:50:06 Listen on :8500 
+2018/04/12 09:50:08 Received info from 127.0.0.1:48925
+2018/04/12 09:50:12 Received move d from 127.0.0.1:48925
+2018/04/12 09:53:16 Server stopped...
+2018/04/12 09:53:17 Server started 
+2018/04/12 09:53:17 Listen on :8500 
+2018/04/12 09:53:21 Received info from 127.0.0.1:48925
+2018/04/12 09:53:24 Received move l from 127.0.0.1:48925
+2018/04/12 09:53:26 Received move l from 127.0.0.1:48925
+2018/04/12 09:53:28 Received move l from 127.0.0.1:48925
+2018/04/12 09:54:10 Server stopped...
+2018/04/12 09:54:11 Server started 
+2018/04/12 09:54:11 Listen on :8500 
+2018/04/12 09:54:15 Received move l from 127.0.0.1:54057
+2018/04/12 09:54:17 Received move l from 127.0.0.1:54057
+2018/04/12 09:54:18 Received move l from 127.0.0.1:54057
+2018/04/12 09:54:20 Received move l from 127.0.0.1:54057
+2018/04/12 09:54:22 Received move l from 127.0.0.1:54057
+2018/04/12 09:54:59 Server stopped...
+2018/04/12 09:54:59 Server started 
+2018/04/12 09:54:59 Listen on :8500 
+2018/04/12 09:55:03 Received info from 127.0.0.1:54057
+2018/04/12 09:55:05 Received move d from 127.0.0.1:54057
+2018/04/12 09:55:23 Received move r from 127.0.0.1:54057
+2018/04/12 09:55:25 Received move r from 127.0.0.1:54057
+2018/04/12 09:55:27 Received move r from 127.0.0.1:54057

@@ -47,57 +47,57 @@ class Map:
             return False
 
     def move_robot(self, adresse_client, direction):
-        options = {
-            'u' : moveUp,
-            'd' : moveDown,
-            'l' : moveLeft,
-            'r' : moveRight,
-            '' : 'Missing argument : direction (usage : move <direction>)'
-        }
-        if direction in options:
-            return options[direction](self.robots_list[adresse_client])
-        else:
-            return 'Direction not recognized'
+        if direction == 'u':
+            return self.moveUp(adresse_client)
+        elif direction == 'd':
+            return self.moveDown(adresse_client)
+        elif direction == 'l':
+            return self.moveLeft(adresse_client)
+        elif direction == 'r':
+            return self.moveRight(adresse_client)
+        elif direction == '':
+            return 'Missing argument : direction (usage : move <direction>)'
+        return 'Direction not recognized'
 
-    def moveUp(self, robot):
+    def moveUp(self, adresse_client):
         blocked = 'Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
-            if robot.line == obstacle.line - 1:
+            if self.robots_list[adresse_client].line == obstacle.line - 1 and self.robots_list[adresse_client].column == obstacle.column:
                 return blocked
-        if robot.line == self.lines - 1:
+        if self.robots_list[adresse_client].line == self.lines - 1:
             return blocked
-        robot.line = robot.line + 1
-        return self
+        self.robots_list[adresse_client].line = self.robots_list[adresse_client].line + 1
+        return 'Robot moved Up'
 
-    def moveDown(self, robot):
+    def moveDown(self, adresse_client):
         blocked = 'Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
-            if robot.line == obstacle.line + 1:
+            if self.robots_list[adresse_client].line == obstacle.line + 1 and self.robots_list[adresse_client].column == obstacle.column:
                 return blocked
-        if robot.line == self.lines + 1:
+        if self.robots_list[adresse_client].line == self.lines + 1:
             return blocked
-        robot.line = robot.line - 1
-        return self
+        self.robots_list[adresse_client].line = self.robots_list[adresse_client].line - 1
+        return 'Robot moved Down'
 
-    def moveLeft(self, robot):
+    def moveLeft(self, adresse_client):
         blocked = 'Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
-            if robot.column == obstacle.column + 1:
+            if self.robots_list[adresse_client].line == obstacle.line and self.robots_list[adresse_client].column == obstacle.column + 1:
                 return blocked
-        if robot.column == self.column + 1:
+        if self.robots_list[adresse_client].column == self.columns + 1:
             return blocked
-        robot.column = robot.column - 1
-        return self
+        self.robots_list[adresse_client].column = self.robots_list[adresse_client].column - 1
+        return 'Robot moved Left'
 
-    def moveRight(self, robot):
+    def moveRight(self, adresse_client):
         blocked = 'Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
-            if robot.column == obstacle.column - 1:
+            if self.robots_list[adresse_client].line == obstacle.line and self.robots_list[adresse_client].column == obstacle.column - 1:
                 return blocked
-        if robot.column == self.column - 1:
+        if self.robots_list[adresse_client].column == self.columns - 1:
             return blocked
-        robot.column = robot.column + 1
-        return self
+        self.robots_list[adresse_client].column = self.robots_list[adresse_client].column + 1
+        return 'Robot moved Right'
 
 
 class Robot:
@@ -123,7 +123,7 @@ class Robot:
             self.state = False
 
     def rename(self, new_username):
-        if new_username == 'rename':
+        if new_username == None:
             return 'Missing argument (usage : rename <name>)'
         self.username = new_username
         return 'Rename successful'

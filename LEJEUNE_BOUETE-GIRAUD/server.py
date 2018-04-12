@@ -27,6 +27,16 @@ map_server.add_obstacle(Obstacle(7,10))
 map_server.add_obstacle(Obstacle(6,1))
 map_server.add_obstacle(Obstacle(9,4))
 
+def rename_cmd(reponse):
+    if len(reponse) == 2:
+        return map_server.get_robot(ip_client).rename(reponse[1])
+    return 'Missing argument (usage : rename <name>)'
+
+def move_cmd(reponse):
+    if len(reponse) == 2:
+        return map_server.move_robot(ip_client, reponse[1])
+    return 'Missing argument : direction (usage : move <direction>)'
+
 while True:
     try:
         requete = sock.recvfrom(TAILLE_TAMPON)
@@ -36,17 +46,23 @@ while True:
         file.write(f"{date.today().strftime('%Y/%m/%d')} {datetime.today().strftime('%X')} Received {mess.decode()} from {ip_client}:{port_client}\n")
         file.close()
         if map_server.client_exists(ip_client) == False:
-            map_server.add_robot(ip_client, Robot('undefined', 5, 5))
+            map_server.add_robot(ip_client, Robot('undefined', 4, 8))
         reponse = mess.decode().split(' ')
-        commandes = {'help' : 'Commands list : quit, rename, send, pause, unpause, status, info, move',
-                     'info' : str(map_server),
-                     'rename': map_server.get_robot(ip_client).rename(reponse[len(reponse)-1])}
-        if reponse[0] in commandes:
-            rep = f'100 {commandes[reponse[0]]}'
-            sock.sendto(rep.encode(), adr_client)
+
+        rep = ''
+
+        if reponse[0] == 'help':
+            rep = f'100 Commands : quit, rename, send, pause, unpause, status, info'
+        elif reponse[0] == 'info':
+            rep = f'100 '+str(map_server)
+        elif reponse[0] == 'move':
+            rep = f'100 '+move_cmd(reponse)
+        elif reponse[0] == 'rename':
+            rep = f'100 '+rename_cmd(reponse)
         else:
-            erreur = f'200 Requête incorrecte : {reponse[0]}'
-            sock.sendto(erreur.encode(), adr_client)
+            rep = f'200 Requête incorrecte : {reponse[0]}'
+
+        sock.sendto(rep.encode(), adr_client)
     except KeyboardInterrupt: break
 
 file = open("server.log", "a")
