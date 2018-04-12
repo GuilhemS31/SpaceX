@@ -21,17 +21,25 @@ class MaWin(QtWidgets.QWidget, Ui_Dialog):
         print("click")
         with socket(AF_INET, SOCK_DGRAM) as sock:
             mess = ui.Command.text()
-            text = ui.Terminal.toPlainText() +"> "+ mess
+            print("click1")
+            text =  ui.Terminal.toPlainText() +"> "+ mess +"\n"
+            print("click2")
             ui.Terminal.setText(text)
-            if (mess == "quit"):
-                print("Merci d'avoir utiliser serveur client,  Aurevoir")
-                exit(0)
-            ui.Command.clear()
-            # Envoi de la requête au serveur (ip, port) après encodage de str en bytes
-            sock.sendto(mess.encode(), ((config['DEFAULT']['ip']), (int)(config['DEFAULT']['port'])))
-            # Réception de la réponse du serveur et décodage de bytes en str
-            reponse, _ = sock.recvfrom(TAILLE_TAMPON)
-            ui.Terminal.setText(reponse.decode())
+            if mess != "":
+                print("click3")
+                if (mess == "quit"):
+                    print("Merci d'avoir utiliser serveur client,  Aurevoir")
+                    exit(0)
+                ui.Command.clear()
+                print("click4")
+                # Envoi de la requête au serveur (ip, port) après encodage de str en bytes
+                sock.sendto(mess.encode(), ((config['DEFAULT']['ip']), (int)(config['DEFAULT']['port'])))
+                print("click5")
+                # Réception de la réponse du serveur et décodage de bytes en str
+                reponse, _ = sock.recvfrom(TAILLE_TAMPON)
+                rep = reponse.decode()
+                print("click6")
+                ui.Terminal.setText(ui.Terminal.toPlainText() + rep + "\n")
 
     #MaWin.Send.clicked.connect(on_Send_clicked)
 
