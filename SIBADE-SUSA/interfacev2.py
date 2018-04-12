@@ -7,7 +7,6 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#import client.py
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
@@ -40,6 +39,8 @@ class Ui_Dialog(object):
         self.verticalLayout.addWidget(self.Send)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         self.verticalLayout_2.addLayout(self.horizontalLayout_2)
+
+
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
