@@ -6,55 +6,70 @@ if len(sys.argv) != 1:
     print(f"Usage: {sys.argv[0]}")
     sys.exit(1)
 
-def initRobot():
+def initRobot(client):
     mapServ.listRobot[client] = Robot(0,0,"newRobot")
 
 def quiter(client):
-    for rob in mapServ.listRobot:
-        if rob.name == newName:
-            rob.actif = False
-
-    with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1011")
-    return "1011"
+	mapServ.listRobot[client].actif = False
+	with open(config['DEFAULT']['log'], "a") as logFic:
+		logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1011")
+	return "1011"
 
 def rename(client,cmd):
-    ret = ""
     newName = cmd.decode("utf-8").split()
-    if newName.len != 2 :
-        ret = "3021"
+    if len(newName) != 2 :
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 3021")
+        return "3021"
     for rob in mapServ.listRobot:
-        if rob.name == newName:
-            ret = "2021"
+        if mapServ.listRobot[rob].name == newName[1]:
+            with open(config['DEFAULT']['log'], "a") as logFic:
+                logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 2021")
+            return "2021"
 
     mapServ.listRobot[client].name = newName[1]
-    ret = "1021"
-
+    print(mapServ.listRobot[client])
     with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse " + rep)
-    return ret
+        logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1021")
+    return "1021"
 
 def send(client,cmd):
-    return "3"
+    return "3030"
 
 def pause(client):
-    return "4"
+    if mapServ.listRobot[client].actif:
+        mapServ.listRobot[client].actif = False
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1041")
+        return "1041"
+    else:
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 2041")
+        return "2041"
 
 def unpause(client):
-    return "5"
+    if mapServ.listRobot[client].actif:
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 2051")
+        return "1041"
+    else:
+        mapServ.listRobot[client].actif = True
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1051")
+        return "2041"
 
 def status(client):
     return "6"
 
 def info(client):
     info = "\n"
-    if mapServ.listRobot.len == 0 :
+    if len(mapServ.listRobot) == 0 :
         info = "no robots found"
     else:
         for rob in mapServ.listRobot:
-            info += rob.name + "("+("Actif" if rob.actif else "Inactif")+")"+" : [" + rob.posX + "," + rob.posY + "]" + rob.ress + " ressource(s)" + "\n"
+            info += str(mapServ.listRobot[rob]) + "\n"
     with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1071")
+	    logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Reponse 1071")
     return "1071_"+info
 
 def move(client,cmd):
@@ -63,7 +78,7 @@ def move(client,cmd):
 def switch(client,cmd):
     x = cmd.decode("utf-8").split()[0].upper()
     with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Commande " + x[0] + " par " + client )
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Commande " + x + " par " + client )
     return {
         'QUIT': quiter(client),
         'RENAME': rename(client,cmd),
@@ -79,7 +94,7 @@ def switch(client,cmd):
 
 #lecture fichier conf
 config = configparser.ConfigParser()
-config.read('spaceXserv.conf')
+config.read('spaceX.conf')
 
 #creation socket
 sock_server = socket()
@@ -91,24 +106,20 @@ mapServ = Map()
 with open(config['DEFAULT']['log'], "a") as logFic:
     logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Serveur en attente sur le port " + config['DEFAULT']['port'])
 
-print('avant accept')
 sock_client, adr_client = sock_server.accept()
-print(' apres accept')
 
 #nouvelle connexion = nouveau robot
-print(mapServ.listRobot.keys())
-print(adr_client)
-'''
-if adr_client[0] not in mapServ.listRobot.keys()
-    initRobot()
-'''
+if adr_client[0] not in mapServ.listRobot :
+    initRobot(adr_client[0])
+
 while True:
     try:
         with open(config['DEFAULT']['log'], "a") as logFic:
             logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Connexion de " + adr_client[0])
 
         cmd = sock_client.recv(255)
-        print(switch(adr_client[0],cmd))
+        rep = switch(adr_client[0],cmd)
+        print(rep)
         print(mapServ)
         #return nouvelle Map
         sock_server.sendto(rep.encode(), adr_client)

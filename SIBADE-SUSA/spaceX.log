@@ -127,3 +127,89 @@
 2018/04/11 12:03:06 Connexion de 127.0.0.1
 2018/04/12 11:58:34 Serveur en attente sur le port 4004
 2018/04/12 12:00:22 Serveur en attente sur le port 4004
+2018/04/12 14:47:42 Serveur en attente sur le port 4004
+2018/04/12 14:49:17 Serveur en attente sur le port 4004
+2018/04/12 14:49:34 Connexion de 127.0.0.1
+2018/04/12 14:50:00 Commande T par 127.0.0.1
+2018/04/12 14:50:00 Reponse 1011
+2018/04/12 14:51:16 Serveur en attente sur le port 4004
+2018/04/12 14:51:18 Connexion de 127.0.0.1
+2018/04/12 14:51:21 Commande T par 127.0.0.1
+2018/04/12 14:51:21 Reponse 1011
+2018/04/12 14:52:57 Serveur en attente sur le port 4004
+2018/04/12 14:53:00 Connexion de 127.0.0.1
+2018/04/12 14:53:06 Commande T par 127.0.0.1
+2018/04/12 14:53:06 Reponse 1011
+2018/04/12 14:54:49 Serveur en attente sur le port 4004
+2018/04/12 14:54:51 Connexion de 127.0.0.1
+2018/04/12 14:54:52 Commande T par 127.0.0.1
+2018/04/12 14:55:59 Serveur en attente sur le port 4004
+2018/04/12 14:56:02 Connexion de 127.0.0.1
+2018/04/12 14:56:04 Commande T par 127.0.0.1
+2018/04/12 14:59:27 Serveur en attente sur le port 4004
+2018/04/12 14:59:29 Connexion de 127.0.0.1
+2018/04/12 14:59:32 Commande T par 127.0.0.1
+2018/04/12 14:59:32 Reponse 1011
+2018/04/12 15:03:54 Serveur en attente sur le port 4004
+2018/04/12 15:03:57 Connexion de 127.0.0.1
+2018/04/12 15:03:58 Commande T par 127.0.0.1
+2018/04/12 15:03:58 Reponse 1011
+2018/04/12 15:05:06 Serveur en attente sur le port 4004
+2018/04/12 15:05:09 Connexion de 127.0.0.1
+2018/04/12 15:05:14 Commande T par 127.0.0.1
+2018/04/12 15:05:14 Reponse 1011
+2018/04/12 15:07:53 Serveur en attente sur le port 4004
+2018/04/12 15:07:55 Connexion de 127.0.0.1
+2018/04/12 15:07:57 Commande TEST par 127.0.0.1
+2018/04/12 15:07:57 Reponse 1011
+2018/04/12 15:09:21 Serveur en attente sur le port 4004
+2018/04/12 15:09:23 Connexion de 127.0.0.1
+2018/04/12 15:09:24 Commande TEST par 127.0.0.1
+2018/04/12 15:09:24 Reponse 1011
+2018/04/12 15:23:20 Serveur en attente sur le port 4004
+2018/04/12 15:23:22 Connexion de 127.0.0.1
+2018/04/12 15:23:25 Commande TEST par 127.0.0.1
+2018/04/12 15:23:25 Reponse 1011
+2018/04/12 15:23:25 Reponse 3021
+2018/04/12 15:41:14 Serveur en attente sur le port 4004
+2018/04/12 15:41:17 Connexion de 127.0.0.1
+2018/04/12 15:41:19 Commande TEST par 127.0.0.1
+2018/04/12 15:41:19 Reponse 1011
+2018/04/12 15:41:19 Reponse 3021
+2018/04/12 15:42:30 Serveur en attente sur le port 4004
+2018/04/12 15:42:33 Connexion de 127.0.0.1
+2018/04/12 15:42:35 Commande TEST par 127.0.0.1
+2018/04/12 15:42:35 Reponse 1011
+2018/04/12 15:42:35 Reponse 3021
+2018/04/12 15:43:37 Serveur en attente sur le port 4004
+2018/04/12 15:43:40 Connexion de 127.0.0.1
+2018/04/12 15:43:42 Commande TEST par 127.0.0.1
+2018/04/12 15:43:42 Reponse 1011
+2018/04/12 15:43:42 Reponse 3021
+2018/04/12 15:43:42 Reponse 1071
+2018/04/12 15:45:16 Serveur en attente sur le port 4004
+2018/04/12 15:45:18 Connexion de 127.0.0.1
+2018/04/12 15:45:22 Commande QUIT par 127.0.0.1
+2018/04/12 15:45:22 Reponse 1011
+2018/04/12 15:45:22 Reponse 3021
+2018/04/12 15:45:22 Reponse 1071
+2018/04/12 15:54:44 Serveur en attente sur le port 4004
+2018/04/12 15:54:47 Connexion de 127.0.0.1
+2018/04/12 15:54:59 Commande INFO par 127.0.0.1
+2018/04/12 15:54:59 Reponse 1011
+2018/04/12 15:54:59 Reponse 3021
+2018/04/12 15:54:59 Reponse 1071
+2018/04/12 15:56:17 Serveur en attente sur le port 4004
+2018/04/12 15:56:19 Connexion de 127.0.0.1
+2018/04/12 15:56:21 Commande INFO par 127.0.0.1
+2018/04/12 15:56:21 Reponse 1011
+2018/04/12 15:56:21 Reponse 3021
+2018/04/12 15:56:21 Reponse 1071
+2018/04/12 16:03:05 Serveur en attente sur le port 4004
+2018/04/12 16:03:07 Connexion de 127.0.0.1
+2018/04/12 16:03:18 Commande UNPAUSE par 127.0.0.1
+2018/04/12 16:03:18 Reponse 1011
+2018/04/12 16:03:18 Reponse 3021
+2018/04/12 16:03:18 Reponse 2041
+2018/04/12 16:03:18 Reponse 1051
+2018/04/12 16:03:18 Reponse 1071

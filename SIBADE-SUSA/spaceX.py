@@ -17,7 +17,7 @@ class Tiles:
 	def isRess(self) : return self.__isRess
 	@isRess.setter
 	def isRess(self,isR) : self.__isRess = isR 
-	
+
 	def __str__(self):
 		if self.isObs :
 			return "X"
@@ -51,7 +51,10 @@ class Robot():
 	@actif.setter
 	def actif(self,mode) : self.__actif = mode
 		
-
+	def __str__(self):
+		ret = self.name + "("+("Actif" if self.actif else "Inactif")+")"+" : [" + str(self.posX) + "," + str(self.posY) + "] - " + str(self.ress) + " ressource(s)"
+		return ret
+        
 class Map:
 	
 	def refreshRess(self):
@@ -103,12 +106,14 @@ class Map:
 		for lig in self.__grid:
 			ret += "|"
 			for col in lig:
-				"""
-				if robot in lig,col
-					then R
+				isRob = False
+				for robot in self.__listRobot:
+   					if self.__listRobot[robot].posX == lig and self.__listRobot[robot].posY == col and self.__listRobot[robot].actif:
+					    isRob = True
+				if isRob :
+					ret+= "-|"
 				else:
-				"""
-				ret+= str(col) +"|"
+					ret+= str(col) +"|"
 			ret += "\n"
 		return ret
 				
