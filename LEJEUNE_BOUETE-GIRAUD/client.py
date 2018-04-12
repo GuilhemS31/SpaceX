@@ -12,7 +12,6 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.textBrowser.setText("Enter a command (help to see the list, quit to leave the program) : \n")
-        #self.pushButton.clicked.connect(self.send_message())
 
     @QtCore.pyqtSlot()
     def on_pushButton_clicked(self):
