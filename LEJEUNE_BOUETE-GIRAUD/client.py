@@ -16,11 +16,15 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
         self.refresh_map(open("map.json","r").read())
 
     def refresh_map(self, map_server):
+        for i in reversed(range(self.gridLayout.count())):
+            self.gridLayout.itemAt(i).widget().setParent(None)
         _map = json.loads(map_server)
         self.gridLayout.rowCount = _map['lines']
         self.gridLayout.columnCount = _map['columns']
         for obstacle in _map['obstacles_list']:
             self.gridLayout.addWidget(QtGui.QPushButton('O'), obstacle['line'], obstacle['column'])
+        for robot in _map['robots_list'].values():
+            self.gridLayout.addWidget(QtGui.QPushButton(robot['username']), robot['line'], robot['column'])
 
 
     @QtCore.pyqtSlot()

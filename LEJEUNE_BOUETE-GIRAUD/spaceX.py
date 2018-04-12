@@ -61,7 +61,7 @@ class Map:
             return '3082 Direction not recognized'
         return '2081 Robot is paused'
 
-    def moveUp(self, adresse_client):
+    def moveDown(self, adresse_client):
         blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line - 1 and self.robots_list[adresse_client].column == obstacle.column:
@@ -69,9 +69,9 @@ class Map:
         if self.robots_list[adresse_client].line == self.lines - 1:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line + 1
-        return '1081 Robot moved Up'
+        return '1081 Robot moved Down'
 
-    def moveDown(self, adresse_client):
+    def moveUp(self, adresse_client):
         blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line + 1 and self.robots_list[adresse_client].column == obstacle.column:
@@ -79,7 +79,7 @@ class Map:
         if self.robots_list[adresse_client].line == self.lines + 1:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line - 1
-        return '1081 Robot moved Down'
+        return '1081 Robot moved Up'
 
     def moveLeft(self, adresse_client):
         blocked = '2081 Robot blocked by obstacle'
