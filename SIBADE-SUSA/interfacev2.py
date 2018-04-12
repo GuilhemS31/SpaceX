@@ -48,17 +48,21 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.Send.setText(_translate("Dialog", "Send"))
-
+'''
     @QtCore.pyqtSlot()
     def on_Send_clicked(self):
         com = self.Command.text()
+        print(com)
         #client.returnText(com)
 
-'''if __name__ == "__main__":
+
+
+if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_Dialog()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())'''
+    sys.exit(app.exec_())
+'''

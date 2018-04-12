@@ -4,7 +4,6 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
 
 
-
 if len(sys.argv) != 3:
     print(f"Usage: {sys.argv[0]} <ip> <port>", file=sys.stderr)
     sys.exit(1)
@@ -24,10 +23,20 @@ with socket(AF_INET, SOCK_DGRAM)as sock:
         reponse, _ = sock.recvfrom(TAILLE_TAMPON)
         print("Réponse = " + reponse.decode())
 
+
+@QtCore.pyqtSlot()
+def on_Send_clicked(self):
+    com = self.Command.text()
+
+class MaWin(QtGui, Ui_Dialog):
+    def __init__(self, parent=None):
+        QtGui.__init__(self, parent)
+        self.setupUi(self)
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
-    MainWindow = QtWidgets.QMainWindow()
+    MainWindow = MaWin()#QtWidgets.QMainWindow()
     ui = Ui_Dialog()
     ui.setupUi(MainWindow)
     MainWindow.show()
