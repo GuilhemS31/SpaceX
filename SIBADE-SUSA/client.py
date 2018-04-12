@@ -1,7 +1,8 @@
 from socket import *
-import interfacev2.py
+from interfacev2 import Ui_Dialog
+from PyQt5 import QtCore, QtGui, QtWidgets
 import sys
-os.system("first.py -i " + monfichier)
+
 
 if len(sys.argv) != 3:
     print(f"Usage: {sys.argv[0]} <ip> <port>", file=sys.stderr)
@@ -11,7 +12,7 @@ TAILLE_TAMPON = 256
 with socket(AF_INET, SOCK_DGRAM)as sock:
     while True:
         # Remarque : pas besoin de bind car le port local est choisi par le système
-        mess = returnText(text)
+        mess = input("$=> ")
 
         if (mess == "quit"):
             print("Merci d'avoir utiliser serveur client,  Aurevoir")
@@ -22,6 +23,21 @@ with socket(AF_INET, SOCK_DGRAM)as sock:
         reponse, _ = sock.recvfrom(TAILLE_TAMPON)
         print("Réponse = " + reponse.decode())
 
-def returnText(text):
-    print ("$=>")
-    return ""+text
+
+@QtCore.pyqtSlot()
+def on_Send_clicked(self):
+    com = self.Command.text()
+
+class MaWin(QtGui, Ui_Dialog):
+    def __init__(self, parent=None):
+        QtGui.__init__(self, parent)
+        self.setupUi(self)
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = MaWin()#QtWidgets.QMainWindow()
+    ui = Ui_Dialog()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec_())
