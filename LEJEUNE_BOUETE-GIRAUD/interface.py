@@ -60,8 +60,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow", None))
-        self.pushButton.setText(_translate("MainWindow", "Envoyer", None))
-        self.menuSpaceX.setTitle(_translate("MainWindow", "Fichier", None))
-        self.actionFichier.setText(_translate("MainWindow", "Fichier", None))
-
+        MainWindow.setWindowTitle(_translate("MainWindow", "SpaceX", None))
+        self.pushButton.setText(_translate("MainWindow", "Send", None))
+        self.menuSpaceX.setTitle(_translate("MainWindow", "File", None))
+        self.actionFichier.setText(_translate("MainWindow", "File", None))
