@@ -79,6 +79,7 @@ while True:
             rep = status_cmd(ip_client)
         else:
             rep = f'200 Incorrect request : {reponse[0]}'
+        rep = "> " + rep + "\n"
 
         sock.sendto(rep.encode(), adr_client)
     except KeyboardInterrupt: break
