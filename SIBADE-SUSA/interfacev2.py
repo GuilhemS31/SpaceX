@@ -47,7 +47,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.Send.setText(_translate("Dialog", "Send"))
+        self.Send.setText(_translate("Form", "Send"))
 '''
     @QtCore.pyqtSlot()
     def on_Send_clicked(self):
