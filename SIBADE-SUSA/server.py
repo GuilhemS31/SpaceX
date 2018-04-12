@@ -146,8 +146,7 @@ while True:
         print("_____")
         updateLog(rep.split("_")[0])
         
-        #return nouvelle Map
-        #sock_server.sendto(rep.encode(), adr_client)
+        sock_client.sendto(rep.encode(), adr_client)
 
     except KeyboardInterrupt:
         break
