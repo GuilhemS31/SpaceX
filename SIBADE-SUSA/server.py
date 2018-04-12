@@ -1,5 +1,5 @@
 from socket import *
-import sys, threading, os, os.path, re, datetime, configparser
+import sys, threading, os, os.path, re, datetime, configparser, time
 from lib import Map,Robot
 
 if len(sys.argv) != 1:
@@ -90,10 +90,10 @@ def quiter(client):
 	return "1011"
 
 def switch(client,cmd,mapServ):
-    x = cmd.decode("utf-8").split()[0].upper()
-    with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Commande " + x + " par " + client )
-    return {
+	x = cmd.decode("utf-8").split()[0].upper()
+	with open(config['DEFAULT']['log'], "a") as logFic:
+		logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Commande " + x + " par " + client )
+	return {
         'QUIT': quiter(client),
         'RENAME': rename(client,cmd),
         'SEND': send(client,cmd),
@@ -116,6 +116,7 @@ sock_server.bind(("", (int)(config['DEFAULT']['port'])))
 sock_server.listen(4)
 
 mapServ = Map()
+initTimer = time.time()
 
 with open(config['DEFAULT']['log'], "a") as logFic:
     logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Serveur en attente sur le port " + config['DEFAULT']['port'])
@@ -133,11 +134,18 @@ while True:
 
         cmd = sock_client.recv(255)
         rep = switch(adr_client[0],cmd,mapServ)
+        actualTimer = time.time()
+        print(initTimer,actualTimer,actualTimer-initTimer)
+        #if actualTimer - initTimer > 300 : #5min
+        if actualTimer - initTimer > 60 :
+            mapServ.refreshRess()
+            initTimer=time.time()
         print(rep)
         print(mapServ)
         print(mapServ.listRobot[adr_client[0]])
         print("_____")
         updateLog(rep.split("_")[0])
+        
         #return nouvelle Map
         #sock_server.sendto(rep.encode(), adr_client)
 
