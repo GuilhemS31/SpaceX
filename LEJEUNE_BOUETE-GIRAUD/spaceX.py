@@ -69,6 +69,9 @@ class Map:
         if self.robots_list[adresse_client].line == self.lines - 1:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line + 1
+        for resource in self.resources_list:
+            if resource.line == self.robots_list[adresse_client].line and resource.column == self.robots_list[adresse_client].column:
+                self.robots_list[adresse_client].add_resource(resource)
         return '1081 Robot moved Down'
 
     def moveUp(self, adresse_client):
@@ -79,6 +82,9 @@ class Map:
         if self.robots_list[adresse_client].line == 0:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line - 1
+        for resource in self.resources_list:
+            if resource.line == self.robots_list[adresse_client].line and resource.column == self.robots_list[adresse_client].column:
+                self.robots_list[adresse_client].add_resource(resource)
         return '1081 Robot moved Up'
 
     def moveLeft(self, adresse_client):
@@ -89,6 +95,9 @@ class Map:
         if self.robots_list[adresse_client].column == 0:
             return blocked
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column - 1
+        for resource in self.resources_list:
+            if resource.line == self.robots_list[adresse_client].line and resource.column == self.robots_list[adresse_client].column:
+                self.robots_list[adresse_client].add_resource(resource)
         return '1081 Robot moved Left'
 
     def moveRight(self, adresse_client):
@@ -99,6 +108,9 @@ class Map:
         if self.robots_list[adresse_client].column == self.columns - 1:
             return blocked
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column + 1
+        for resource in self.resources_list:
+            if resource.line == self.robots_list[adresse_client].line and resource.column == self.robots_list[adresse_client].column:
+                self.robots_list[adresse_client].add_resource(resource)
         return '1081 Robot moved Right'
 
     def status(self, adresse_client):
@@ -149,9 +161,7 @@ class Robot:
 
     def __str__(self):
         result = "1061 POSITION : "+ str(self.column) + " " + str(self.line) + "\n"
-        result = result + "RESOURCES : \n"
-        for resource in self.resources_list:
-            result = result + resource + "\n"
+        result = result + "RESOURCES : " + str(len(self.resources_list))
         return result
 
 
