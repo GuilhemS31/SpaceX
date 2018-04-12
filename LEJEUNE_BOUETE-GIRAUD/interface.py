@@ -65,3 +65,14 @@ class Ui_MainWindow(object):
         self.menuSpaceX.setTitle(_translate("MainWindow", "Fichier", None))
         self.actionFichier.setText(_translate("MainWindow", "Fichier", None))
 
+class MaWin(QtGui.QMainWindow, Ui_MainWindow):
+    def __init__(self, parent=None):
+        QtGui.QMainWindow.__init__(self, parent)
+        self.setupUi(self)
+
+if __name__ == '__main__':
+    import sys
+    app = QtGui.QApplication(sys.argv)
+    win = MaWin()
+    win.show()
+    sys.exit(app.exec_())

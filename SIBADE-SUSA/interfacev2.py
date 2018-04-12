@@ -54,11 +54,11 @@ class Ui_Dialog(object):
         com = self.Command.text()
         #client.returnText(com)
 
-if __name__ == "__main__":
+'''if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_Dialog()
     ui.setupUi(MainWindow)
     MainWindow.show()
-    sys.exit(app.exec_())
+    sys.exit(app.exec_())'''
