@@ -2,6 +2,7 @@ from socket import *
 from PyQt4 import QtGui, QtCore
 from interface import Ui_MainWindow
 import sys
+import json
 
 if len(sys.argv) != 3:
     print("Usage: "+sys.argv[0]+" <ip> <port>", file=sys.stderr)
@@ -12,9 +13,19 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
         QtGui.QMainWindow.__init__(self, parent)
         self.setupUi(self)
         self.textBrowser.setText("Enter a command (help to see the list, quit to leave the program) : \n")
+        self.refresh_map(open("map.json","r").read())
+
+    def refresh_map(self, map_server):
+        _map = json.loads(map_server)
+        self.gridLayout.rowCount = _map['lines']
+        self.gridLayout.columnCount = _map['columns']
+        for obstacle in _map['obstacles_list']:
+            self.gridLayout.addWidget(QtGui.QPushButton('O'), obstacle['line'], obstacle['column'])
+
 
     @QtCore.pyqtSlot()
     def on_pushButton_clicked(self):
+
         TAILLE_TAMPON = 256
         with socket(AF_INET, SOCK_DGRAM) as sock:
             message = self.lineEdit.text()
@@ -26,6 +37,7 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
             reponse, _ = sock.recvfrom(TAILLE_TAMPON)
             rep = self.textBrowser.toPlainText() + reponse.decode()
             self.textBrowser.setText(rep)
+            self.refresh_map(open("map.json","r").read())
 
 
 if __name__ == '__main__':

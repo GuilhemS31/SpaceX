@@ -2,6 +2,7 @@ from socket import *
 from datetime import *
 from spaceX import *
 import sys, locale
+import json
 
 locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
 
@@ -46,6 +47,9 @@ def pause_cmd(adresse_client):
 def unpause_cmd(adresse_client):
     return map_server.unpause_robot(adresse_client)
 
+def jdefault(object):
+    return object.__dict__
+
 
 while True:
     try:
@@ -80,6 +84,9 @@ while True:
         else:
             rep = f'200 Incorrect request : {reponse[0]}'
         rep = "> " + rep + "\n"
+        file = open("map.json", "w")
+        file.write(json.dumps(map_server, default=jdefault))
+        file.close()
 
         sock.sendto(rep.encode(), adr_client)
     except KeyboardInterrupt: break
