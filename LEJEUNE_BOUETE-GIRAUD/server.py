@@ -19,14 +19,19 @@ file.write(f"{date.today().strftime('%Y/%m/%d')} {datetime.today().strftime('%X'
 file.write(f"{date.today().strftime('%Y/%m/%d')} {datetime.today().strftime('%X')} Listen on :{sys.argv[1]} \n")
 file.close()
 
-map_server = Map(11,11)
-map_server.add_obstacle(Obstacle(1,2))
-map_server.add_obstacle(Obstacle(3,8))
-map_server.add_obstacle(Obstacle(5,5))
-map_server.add_obstacle(Obstacle(4,3))
-map_server.add_obstacle(Obstacle(7,10))
-map_server.add_obstacle(Obstacle(6,1))
-map_server.add_obstacle(Obstacle(9,4))
+_map = json.loads(open("map.json","r").read())
+
+map_server = Map(_map['lines'], _map['columns'])
+for obstacle in _map['obstacles_list']:
+    map_server.add_obstacle(Obstacle(obstacle['line'], obstacle['column']))
+for resource in _map['resources_list']:
+    map_server.add_resource(Resource(resource['line'], resource['column']))
+for robot_key, robot in _map['robots_list'].items():
+    _robot = Robot(robot['username'], robot['line'], robot['column'])
+    _robot.state = robot['state']
+    for resource in robot['resources_list']:
+        _robot.add_resource(Resource(resource['name'], resource['line'], resource['column']))
+    map_server.add_robot(robot_key, _robot)
 
 def rename_cmd(reponse):
     if len(reponse) == 2:

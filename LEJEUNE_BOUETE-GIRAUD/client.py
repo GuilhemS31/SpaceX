@@ -36,7 +36,6 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
 
     @QtCore.pyqtSlot()
     def on_pushButton_clicked(self):
-
         TAILLE_TAMPON = 256
         with socket(AF_INET, SOCK_DGRAM) as sock:
             message = self.lineEdit.text()

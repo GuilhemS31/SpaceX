@@ -76,7 +76,7 @@ class Map:
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line + 1 and self.robots_list[adresse_client].column == obstacle.column:
                 return blocked
-        if self.robots_list[adresse_client].line == self.lines + 1:
+        if self.robots_list[adresse_client].line == 0:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line - 1
         return '1081 Robot moved Up'
@@ -86,7 +86,7 @@ class Map:
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line and self.robots_list[adresse_client].column == obstacle.column + 1:
                 return blocked
-        if self.robots_list[adresse_client].column == self.columns + 1:
+        if self.robots_list[adresse_client].column == 0:
             return blocked
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column - 1
         return '1081 Robot moved Left'
@@ -121,7 +121,7 @@ class Robot:
         self.state = False
         self.resources_list = []
 
-    def __add__(self, resource):
+    def add_resource(self, resource):
         self.resources_list.append(resource)
         return self
 
