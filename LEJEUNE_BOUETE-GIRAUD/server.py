@@ -40,6 +40,12 @@ def move_cmd(reponse):
 def status_cmd(adresse_client):
     return map_server.status(adresse_client)
 
+def pause_cmd(adresse_client):
+    return map_server.pause_robot(adresse_client)
+
+def unpause_cmd(adresse_client):
+    return map_server.unpause_robot(adresse_client)
+
 
 while True:
     try:
@@ -66,9 +72,9 @@ while True:
         elif reponse[0] == 'send':
             rep = f'coucou'
         elif reponse[0] == 'pause':
-            rep = f'coucou'
+            rep = f'100 '+pause_cmd(ip_client)
         elif reponse[0] == 'unpause':
-            rep = f'coucou'
+            rep = f'100 '+unpause_cmd(ip_client)
         elif reponse[0] == 'status':
             rep = f'100 '+status_cmd(ip_client)
         else:

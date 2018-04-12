@@ -47,17 +47,19 @@ class Map:
             return False
 
     def move_robot(self, adresse_client, direction):
-        if direction == 'u':
-            return self.moveUp(adresse_client)
-        elif direction == 'd':
-            return self.moveDown(adresse_client)
-        elif direction == 'l':
-            return self.moveLeft(adresse_client)
-        elif direction == 'r':
-            return self.moveRight(adresse_client)
-        elif direction == '':
-            return 'Missing argument : direction (usage : move <direction>)'
-        return 'Direction not recognized'
+        if self.robots_list[adresse_client].state == False:
+            if direction == 'u':
+                return self.moveUp(adresse_client)
+            elif direction == 'd':
+                return self.moveDown(adresse_client)
+            elif direction == 'l':
+                return self.moveLeft(adresse_client)
+            elif direction == 'r':
+                return self.moveRight(adresse_client)
+            elif direction == '':
+                return 'Missing argument : direction (usage : move <direction>)'
+            return 'Direction not recognized'
+        return 'Robot is paused'
 
     def moveUp(self, adresse_client):
         blocked = 'Robot blocked by obstacle'
@@ -102,6 +104,12 @@ class Map:
     def status(self, adresse_client):
         return str(self.robots_list[adresse_client])
 
+    def pause_robot(self, adresse_client):
+        return self.robots_list[adresse_client].pause()
+
+    def unpause_robot(self, adresse_client):
+        return self.robots_list[adresse_client].unpause()
+
 
 
 class Robot:
@@ -120,11 +128,17 @@ class Robot:
     def delete_resource(self, resource):
         self.resources_list.remove(resource)
 
-    def switch_state(self):
+    def pause(self):
+        if self.state == True:
+            return 'Robot is already paused'
+        self.state = True
+        return 'Robot\'s behavior has been paused'
+
+    def unpause(self):
         if self.state == False:
-            self.state = True
-        else:
-            self.state = False
+            return 'Robot is already behaving normally'
+        self.state = False
+        return 'Robot resumed his normal behavior'
 
     def rename(self, new_username):
         if new_username == None:
