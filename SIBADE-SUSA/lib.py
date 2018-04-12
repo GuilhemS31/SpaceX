@@ -9,12 +9,8 @@ class Tiles:
 		
 	@property
 	def posX(self) : return self.__posX
-	@posX.setter
-	def posX(self,aj) : self.__posX = self.__posX + aj
 	@property
 	def posY(self) : return self.__posY
-	@posY.setter
-	def posY(self,aj) : self.__posY = self.__posY + aj
 	@property
 	def isObs(self) : return self.__isObs
 	@property
@@ -42,6 +38,10 @@ class Robot():
 	def posX(self) : return self.__posX
 	@property
 	def posY(self) : return self.__posY
+	@posX.setter
+	def posX(self,aj) : self.__posX = aj
+	@posY.setter
+	def posY(self,aj) : self.__posY = aj
 	@property
 	def name(self) : return self.__name
 	@name.setter
@@ -49,7 +49,7 @@ class Robot():
 	@property
 	def ress(self) : return self.__ress
 	@ress.setter
-	def ress(self) : self.__ress += 1
+	def ress(self,aj) : self.__ress = aj
 	@property
 	def actif(self) : return self.__actif 
 	@actif.setter
@@ -117,7 +117,7 @@ class Map:
 			for col in lig:
 				isRob = False
 				for robot in self.__listRobot:
-   					if self.__listRobot[robot].posX == col and self.__listRobot[robot].posY == lig and self.__listRobot[robot].actif:
+   					if self.__listRobot[robot].posX == col.posX and self.__listRobot[robot].posY == col.posY and self.__listRobot[robot].actif:
 					    isRob = True
 				if isRob :
 					ret+= "-|"
@@ -128,4 +128,3 @@ class Map:
                     
 	def getPos(self,x,y):
 		return self.__grid[x][y]
-        

@@ -70,7 +70,7 @@ def move(client,cmd,mapServ):
 		newCoord = (1,0)
 	if direc[1].upper() == 'L':
 		newCoord = (0,-1)
-	if direc[1].upper() == 'D':
+	if direc[1].upper() == 'R':
 		newCoord = (0,1)
 	
 	oldCoord = (mapServ.listRobot[client].posX,mapServ.listRobot[client].posY)
@@ -78,8 +78,9 @@ def move(client,cmd,mapServ):
 	if mapServ.getPos((newCoord[0]+oldCoord[0]),(newCoord[1]+oldCoord[1])).isObs or newCoord[0]+oldCoord[0] < 0 or newCoord[0]+oldCoord[0] > 11 or newCoord[1]+oldCoord[1] < 0 or newCoord[1]+oldCoord[1] > 10 :
 		return "2081"
 	else:
-		#voir si case est ress
-		#if mapServ.getPos((newCoord[0]+oldCoord[0]),(newCoord[1]+oldCoord[1])).isRess:
+		if mapServ.getPos((newCoord[0]+oldCoord[0]),(newCoord[1]+oldCoord[1])).isRess:
+			mapServ.listRobot[client].ress += 1
+			mapServ.getPos((newCoord[0]+oldCoord[0]),(newCoord[1]+oldCoord[1])).isRess = False
 		mapServ.listRobot[client].posX = (newCoord[0]+oldCoord[0])
 		mapServ.listRobot[client].posY = (newCoord[1]+oldCoord[1])
 		return "1081"
