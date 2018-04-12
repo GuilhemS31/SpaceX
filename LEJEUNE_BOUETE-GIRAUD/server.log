@@ -540,3 +540,26 @@
 2018/04/12 10:12:22 Received status from 127.0.0.1:45398
 2018/04/12 10:12:29 Received move l from 127.0.0.1:45398
 2018/04/12 10:12:32 Received status from 127.0.0.1:45398
+2018/04/12 10:33:51 Server stopped...
+2018/04/12 10:33:52 Server started 
+2018/04/12 10:33:52 Listen on :8500 
+2018/04/12 10:33:54 Received pause from 127.0.0.1:45398
+2018/04/12 10:33:57 Received pause from 127.0.0.1:45398
+2018/04/12 10:33:59 Received unpause from 127.0.0.1:45398
+2018/04/12 10:34:22 Server stopped...
+2018/04/12 10:34:23 Server started 
+2018/04/12 10:34:23 Listen on :8500 
+2018/04/12 10:34:28 Received pause from 127.0.0.1:39133
+2018/04/12 10:34:30 Received pause from 127.0.0.1:39133
+2018/04/12 10:34:32 Received unpause from 127.0.0.1:39133
+2018/04/12 10:34:35 Received unpause from 127.0.0.1:39133
+2018/04/12 10:37:34 Server stopped...
+2018/04/12 10:37:34 Server started 
+2018/04/12 10:37:34 Listen on :8500 
+2018/04/12 10:37:37 Received info from 127.0.0.1:39133
+2018/04/12 10:37:41 Received rename nicolas from 127.0.0.1:39133
+2018/04/12 10:37:43 Received move u from 127.0.0.1:39133
+2018/04/12 10:37:46 Received pause from 127.0.0.1:39133
+2018/04/12 10:37:48 Received move u from 127.0.0.1:39133
+2018/04/12 10:37:54 Received unpause from 127.0.0.1:39133
+2018/04/12 10:37:57 Received move u from 127.0.0.1:39133

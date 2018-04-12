@@ -26,7 +26,7 @@ with socket(AF_INET, SOCK_DGRAM) as sock:
     while True:
         message = input("> ")
         if message == "quit" :
-            print("Disconnected successful")
+            print("1011 Disconnected successful")
             break
         sock.sendto(message.encode(), (sys.argv[1], int(sys.argv[2])))
         reponse, _ = sock.recvfrom(TAILLE_TAMPON)
