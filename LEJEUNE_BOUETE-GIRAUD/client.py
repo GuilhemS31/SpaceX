@@ -21,10 +21,17 @@ class MaWin(QtGui.QMainWindow, Ui_MainWindow):
         _map = json.loads(map_server)
         self.gridLayout.rowCount = _map['lines']
         self.gridLayout.columnCount = _map['columns']
+        for column in range(0,_map['columns']):
+            for line in range(0,_map['lines']):
+                self.gridLayout.addWidget(QtGui.QPushButton(), line, column)
         for obstacle in _map['obstacles_list']:
-            self.gridLayout.addWidget(QtGui.QPushButton('O'), obstacle['line'], obstacle['column'])
+            obstacle_button = QtGui.QPushButton('O')
+            obstacle_button.setStyleSheet("background-color : red")
+            self.gridLayout.addWidget(obstacle_button, obstacle['line'], obstacle['column'])
         for robot in _map['robots_list'].values():
-            self.gridLayout.addWidget(QtGui.QPushButton(robot['username']), robot['line'], robot['column'])
+            robot_button = QtGui.QPushButton(robot['username'])
+            robot_button.setStyleSheet("background-color : blue; color : white")
+            self.gridLayout.addWidget(robot_button, robot['line'], robot['column'])
 
 
     @QtCore.pyqtSlot()
