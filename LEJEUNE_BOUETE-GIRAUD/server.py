@@ -3,6 +3,7 @@ from datetime import *
 from spaceX import *
 import sys, locale
 import json
+from random import randint
 
 locale.setlocale(locale.LC_ALL, 'fr_FR.UTF-8')
 
@@ -25,13 +26,18 @@ map_server = Map(_map['lines'], _map['columns'])
 for obstacle in _map['obstacles_list']:
     map_server.add_obstacle(Obstacle(obstacle['line'], obstacle['column']))
 for resource in _map['resources_list']:
-    map_server.add_resource(Resource(resource['line'], resource['column']))
+    map_server.add_resource(Resource(resource['name'], resource['line'], resource['column']))
 for robot_key, robot in _map['robots_list'].items():
     _robot = Robot(robot['username'], robot['line'], robot['column'])
     _robot.state = robot['state']
     for resource in robot['resources_list']:
         _robot.add_resource(Resource(resource['name'], resource['line'], resource['column']))
     map_server.add_robot(robot_key, _robot)
+for line in range(0, map_server.lines):
+    for column in range(0, map_server.columns):
+        nb_resources = randint(0, 3)
+        for i in range(0, nb_resources):
+            map_server.add_resource(Resource('Gold', line, column))
 
 def rename_cmd(reponse):
     if len(reponse) == 2:
