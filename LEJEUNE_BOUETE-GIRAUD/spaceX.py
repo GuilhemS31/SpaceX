@@ -34,7 +34,7 @@ class Map:
     def __str__(self):
         result = "ROBOTS : \n"
         for robot in self.robots_list.values():
-            result = result + str(robot) + "\n"
+            result = result + robot.username + "\n"
         return result
 
     def get_robot(self, adresse_client):
@@ -99,6 +99,10 @@ class Map:
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column + 1
         return 'Robot moved Right'
 
+    def status(self, adresse_client):
+        return str(self.robots_list[adresse_client])
+
+
 
 class Robot:
 
@@ -130,7 +134,7 @@ class Robot:
 
 
     def __str__(self):
-        result = "USERNAME : " + self.username + "\n"
+        result = "POSITION : "+ str(self.column) + " " + str(self.line) + "\n"
         result = result + "RESOURCES : \n"
         for resource in self.resources_list:
             result = result + resource + "\n"

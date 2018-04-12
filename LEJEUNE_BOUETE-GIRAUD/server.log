@@ -504,3 +504,39 @@
 2018/04/12 09:55:23 Received move r from 127.0.0.1:54057
 2018/04/12 09:55:25 Received move r from 127.0.0.1:54057
 2018/04/12 09:55:27 Received move r from 127.0.0.1:54057
+2018/04/12 10:07:19 Server stopped...
+2018/04/12 10:08:08 Server started 
+2018/04/12 10:08:08 Listen on :8500 
+2018/04/12 10:08:12 Received info from 127.0.0.1:54057
+2018/04/12 10:08:20 Received status from 127.0.0.1:54057
+2018/04/12 10:08:44 Server started 
+2018/04/12 10:08:44 Listen on :8500 
+2018/04/12 10:08:50 Received info from 127.0.0.1:51733
+2018/04/12 10:08:53 Received rename nicolas from 127.0.0.1:51733
+2018/04/12 10:08:54 Received info from 127.0.0.1:51733
+2018/04/12 10:09:00 Received status from 127.0.0.1:51733
+2018/04/12 10:09:46 Server started 
+2018/04/12 10:09:46 Listen on :8500 
+2018/04/12 10:09:50 Received help from 127.0.0.1:45312
+2018/04/12 10:09:57 Received info from 127.0.0.1:45312
+2018/04/12 10:10:00 Received rename nicolas from 127.0.0.1:45312
+2018/04/12 10:10:02 Received status from 127.0.0.1:45312
+2018/04/12 10:10:29 Server started 
+2018/04/12 10:10:29 Listen on :8500 
+2018/04/12 10:10:31 Received  from 127.0.0.1:58332
+2018/04/12 10:10:38 Received rename nicolas from 127.0.0.1:58332
+2018/04/12 10:10:39 Received info from 127.0.0.1:58332
+2018/04/12 10:10:43 Received status from 127.0.0.1:58332
+2018/04/12 10:11:24 Server started 
+2018/04/12 10:11:24 Listen on :8500 
+2018/04/12 10:11:28 Received info from 127.0.0.1:45398
+2018/04/12 10:11:31 Received rename nicolas from 127.0.0.1:45398
+2018/04/12 10:11:36 Received status from 127.0.0.1:45398
+2018/04/12 10:11:45 Received move u from 127.0.0.1:45398
+2018/04/12 10:11:48 Received status from 127.0.0.1:45398
+2018/04/12 10:12:12 Received move d from 127.0.0.1:45398
+2018/04/12 10:12:15 Received status from 127.0.0.1:45398
+2018/04/12 10:12:19 Received move r from 127.0.0.1:45398
+2018/04/12 10:12:22 Received status from 127.0.0.1:45398
+2018/04/12 10:12:29 Received move l from 127.0.0.1:45398
+2018/04/12 10:12:32 Received status from 127.0.0.1:45398

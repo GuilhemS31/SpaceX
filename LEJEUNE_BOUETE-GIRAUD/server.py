@@ -37,6 +37,10 @@ def move_cmd(reponse):
         return map_server.move_robot(ip_client, reponse[1])
     return 'Missing argument : direction (usage : move <direction>)'
 
+def status_cmd(adresse_client):
+    return map_server.status(adresse_client)
+
+
 while True:
     try:
         requete = sock.recvfrom(TAILLE_TAMPON)
@@ -59,6 +63,14 @@ while True:
             rep = f'100 '+move_cmd(reponse)
         elif reponse[0] == 'rename':
             rep = f'100 '+rename_cmd(reponse)
+        elif reponse[0] == 'send':
+            rep = f'coucou'
+        elif reponse[0] == 'pause':
+            rep = f'coucou'
+        elif reponse[0] == 'unpause':
+            rep = f'coucou'
+        elif reponse[0] == 'status':
+            rep = f'100 '+status_cmd(ip_client)
         else:
             rep = f'200 Requête incorrecte : {reponse[0]}'
 
