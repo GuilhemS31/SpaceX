@@ -30,12 +30,12 @@ map_server.add_obstacle(Obstacle(9,4))
 def rename_cmd(reponse):
     if len(reponse) == 2:
         return map_server.get_robot(ip_client).rename(reponse[1])
-    return 'Missing argument (usage : rename <name>)'
+    return '3021 Missing argument (usage : rename <name>)'
 
 def move_cmd(reponse):
     if len(reponse) == 2:
         return map_server.move_robot(ip_client, reponse[1])
-    return 'Missing argument : direction (usage : move <direction>)'
+    return '3081 Missing argument : direction (usage : move <direction>)'
 
 def status_cmd(adresse_client):
     return map_server.status(adresse_client)
@@ -62,21 +62,21 @@ while True:
         rep = ''
 
         if reponse[0] == 'help':
-            rep = f'100 Commands : quit, rename, send, pause, unpause, status, info'
+            rep = f'Commands : quit, rename, send, pause, unpause, status, info'
         elif reponse[0] == 'info':
-            rep = f'100 '+str(map_server)
+            rep = str(map_server)
         elif reponse[0] == 'move':
-            rep = f'100 '+move_cmd(reponse)
+            rep = move_cmd(reponse)
         elif reponse[0] == 'rename':
-            rep = f'100 '+rename_cmd(reponse)
+            rep = rename_cmd(reponse)
         elif reponse[0] == 'send':
-            rep = f'coucou'
+            rep = 'coucou'
         elif reponse[0] == 'pause':
-            rep = f'100 '+pause_cmd(ip_client)
+            rep = pause_cmd(ip_client)
         elif reponse[0] == 'unpause':
-            rep = f'100 '+unpause_cmd(ip_client)
+            rep = unpause_cmd(ip_client)
         elif reponse[0] == 'status':
-            rep = f'100 '+status_cmd(ip_client)
+            rep = status_cmd(ip_client)
         else:
             rep = f'200 Requête incorrecte : {reponse[0]}'
 

@@ -32,7 +32,7 @@ class Map:
         self.obstacles_list.remove(obstacle)
 
     def __str__(self):
-        result = "ROBOTS : \n"
+        result = "1071 ROBOTS : \n"
         for robot in self.robots_list.values():
             result = result + robot.username + "\n"
         return result
@@ -57,49 +57,49 @@ class Map:
             elif direction == 'r':
                 return self.moveRight(adresse_client)
             elif direction == '':
-                return 'Missing argument : direction (usage : move <direction>)'
-            return 'Direction not recognized'
-        return 'Robot is paused'
+                return '3081 Missing argument : direction (usage : move <direction>)'
+            return '3082 Direction not recognized'
+        return '2081 Robot is paused'
 
     def moveUp(self, adresse_client):
-        blocked = 'Robot blocked by obstacle'
+        blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line - 1 and self.robots_list[adresse_client].column == obstacle.column:
                 return blocked
         if self.robots_list[adresse_client].line == self.lines - 1:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line + 1
-        return 'Robot moved Up'
+        return '1081 Robot moved Up'
 
     def moveDown(self, adresse_client):
-        blocked = 'Robot blocked by obstacle'
+        blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line + 1 and self.robots_list[adresse_client].column == obstacle.column:
                 return blocked
         if self.robots_list[adresse_client].line == self.lines + 1:
             return blocked
         self.robots_list[adresse_client].line = self.robots_list[adresse_client].line - 1
-        return 'Robot moved Down'
+        return '1081 Robot moved Down'
 
     def moveLeft(self, adresse_client):
-        blocked = 'Robot blocked by obstacle'
+        blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line and self.robots_list[adresse_client].column == obstacle.column + 1:
                 return blocked
         if self.robots_list[adresse_client].column == self.columns + 1:
             return blocked
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column - 1
-        return 'Robot moved Left'
+        return '1081 Robot moved Left'
 
     def moveRight(self, adresse_client):
-        blocked = 'Robot blocked by obstacle'
+        blocked = '2081 Robot blocked by obstacle'
         for obstacle in self.obstacles_list:
             if self.robots_list[adresse_client].line == obstacle.line and self.robots_list[adresse_client].column == obstacle.column - 1:
                 return blocked
         if self.robots_list[adresse_client].column == self.columns - 1:
             return blocked
         self.robots_list[adresse_client].column = self.robots_list[adresse_client].column + 1
-        return 'Robot moved Right'
+        return '1081 Robot moved Right'
 
     def status(self, adresse_client):
         return str(self.robots_list[adresse_client])
@@ -130,25 +130,25 @@ class Robot:
 
     def pause(self):
         if self.state == True:
-            return 'Robot is already paused'
+            return '2041 Robot is already paused'
         self.state = True
-        return 'Robot\'s behavior has been paused'
+        return '1041 Robot\'s behavior has been paused'
 
     def unpause(self):
         if self.state == False:
-            return 'Robot is already behaving normally'
+            return '2051 Robot is already behaving normally'
         self.state = False
-        return 'Robot resumed his normal behavior'
+        return '1051 Robot resumed his normal behavior'
 
     def rename(self, new_username):
         if new_username == None:
-            return 'Missing argument (usage : rename <name>)'
+            return '3021 Missing argument (usage : rename <name>)'
         self.username = new_username
-        return 'Rename successful'
+        return '1021 Rename successful'
 
 
     def __str__(self):
-        result = "POSITION : "+ str(self.column) + " " + str(self.line) + "\n"
+        result = "1061 POSITION : "+ str(self.column) + " " + str(self.line) + "\n"
         result = result + "RESOURCES : \n"
         for resource in self.resources_list:
             result = result + resource + "\n"
