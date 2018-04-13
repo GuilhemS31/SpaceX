@@ -20,9 +20,15 @@ class Ui_Dialog(object):
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.horizontalLayout_2 = QtWidgets.QHBoxLayout()
         self.horizontalLayout_2.setObjectName("horizontalLayout_2")
+        '''
         self.vueTable = QtWidgets.QTableView(self.verticalLayoutWidget_2)
         self.vueTable.setObjectName("vueTable")
         self.horizontalLayout_2.addWidget(self.vueTable)
+        '''
+        self.vueTable = QtWidgets.QTextBrowser(self.verticalLayoutWidget_2)
+        self.vueTable.setObjectName("vueTable")
+        self.horizontalLayout_2.addWidget(self.vueTable)
+
         self.horizontalLayout = QtWidgets.QHBoxLayout()
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.horizontalLayout_2.addLayout(self.horizontalLayout)

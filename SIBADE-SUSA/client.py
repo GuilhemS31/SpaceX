@@ -7,7 +7,7 @@ import sys, configparser
 config = configparser.ConfigParser()
 config.read('spaceX.conf')
 
-TAILLE_TAMPON = 256
+TAILLE_TAMPON = 1024
 
 class MaWin(QtWidgets.QWidget, Ui_Dialog):
     def __init__(self, parent=None):
@@ -18,29 +18,28 @@ class MaWin(QtWidgets.QWidget, Ui_Dialog):
 
     @QtCore.pyqtSlot()
     def on_Send_clicked(self):
-        print("click")
         with socket(AF_INET, SOCK_DGRAM) as sock:
             mess = ui.Command.text()
-            print("click1")
             text =  ui.Terminal.toPlainText() +"> "+ mess +"\n"
-            print("click2")
             ui.Terminal.setText(text)
             if mess != "":
-                print("click3")
                 if (mess == "quit"):
                     sock.sendto(mess.encode(), ((config['DEFAULT']['ip']), (int)(config['DEFAULT']['port'])))
-                    print("Merci d'avoir utiliser serveur client,  Aurevoir")
+                    print("Merci d'avoir utiliser SpaceX,  Aurevoir")
                     exit(0)
                 ui.Command.clear()
-                print("click4")
                 # Envoi de la requête au serveur (ip, port) après encodage de str en bytes
                 sock.sendto(mess.encode(), ((config['DEFAULT']['ip']), (int)(config['DEFAULT']['port'])))
-                print("click5")
                 # Réception de la réponse du serveur et décodage de bytes en str
                 reponse, _ = sock.recvfrom(TAILLE_TAMPON)
                 rep = reponse.decode()
-                print("click6")
-                ui.Terminal.setText(ui.Terminal.toPlainText() + rep + "\n")
+                rText =  rep.split("#")[0]
+                rMap = rep.split("#")[1]
+                ui.Terminal.setText(ui.Terminal.toPlainText() + rText + "\n")
+                ui.vueTable.setText(rMap)
+
+
+
 
     #MaWin.Send.clicked.connect(on_Send_clicked)
 

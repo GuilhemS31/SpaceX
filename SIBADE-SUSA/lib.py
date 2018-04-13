@@ -20,11 +20,11 @@ class Tiles:
 
     def __str__(self):
         if self.isObs :
-            return "X"
+            return "X "
         elif self.isRess :
-            return "O"
+            return "O "
         else:
-            return " "
+            return "   "
 
 class Robot():
     def __init__(self,x,y,name):
@@ -113,7 +113,7 @@ class Map:
     def afficheMap(self,client):
         ret = ""
         for lig in self.__grid:
-            ret += "|"
+            ret += "| "
             for col in lig:
                 isRob = False
                 isMyRob = False
@@ -124,9 +124,9 @@ class Map:
                             isMyRob = True
                 if isRob :
                     if isMyRob :
-                        ret+= "r|"
+                        ret+= " r |"
                     else:
-                        ret+= "-|"
+                        ret+= " - |"
                 else:
                     ret+= str(col) +"|"
             ret += "\n"

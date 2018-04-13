@@ -192,3 +192,93 @@
 2018/04/13 09:43:41 Connexion de 127.0.0.1
 2018/04/13 09:43:41 Commande INFO par 127.0.0.1
 2018/04/13 09:43:41 Reponse 1071
+2018/04/13 09:52:03 Serveur en attente sur le port 4004
+2018/04/13 09:52:14 Connexion de 127.0.0.1
+2018/04/13 09:52:14 Commande INFO par 127.0.0.1
+2018/04/13 09:52:14 Reponse 1071
+2018/04/13 09:55:41 Connexion de 127.0.0.1
+2018/04/13 09:55:41 Commande INFO par 127.0.0.1
+2018/04/13 09:55:41 Reponse 1071
+2018/04/13 09:57:30 Connexion de 127.0.0.1
+2018/04/13 09:57:30 Commande INFO par 127.0.0.1
+2018/04/13 09:57:30 Reponse 1071
+2018/04/13 09:58:18 Connexion de 127.0.0.1
+2018/04/13 09:58:18 Commande VA par 127.0.0.1
+2018/04/13 09:58:18 Reponse 4000
+2018/04/13 09:58:30 Connexion de 127.0.0.1
+2018/04/13 09:58:30 Commande AAZF par 127.0.0.1
+2018/04/13 09:58:30 Reponse 4000
+2018/04/13 09:58:33 Connexion de 127.0.0.1
+2018/04/13 09:58:33 Commande INFO par 127.0.0.1
+2018/04/13 09:58:33 Reponse 1071
+2018/04/13 09:59:38 Serveur en attente sur le port 4004
+2018/04/13 09:59:53 Connexion de 127.0.0.1
+2018/04/13 09:59:53 Commande IFO par 127.0.0.1
+2018/04/13 09:59:53 Reponse 4000
+2018/04/13 10:00:24 Connexion de 127.0.0.1
+2018/04/13 10:00:24 Commande INFO par 127.0.0.1
+2018/04/13 10:00:24 Reponse 1071
+2018/04/13 10:01:21 Connexion de 127.0.0.1
+2018/04/13 10:01:21 Commande MOVE par 127.0.0.1
+2018/04/13 10:01:21 Reponse 1081
+2018/04/13 10:01:31 Connexion de 127.0.0.1
+2018/04/13 10:01:31 Commande MOVE par 127.0.0.1
+2018/04/13 10:01:31 Reponse 1081
+2018/04/13 10:01:35 Connexion de 127.0.0.1
+2018/04/13 10:01:35 Commande INFO par 127.0.0.1
+2018/04/13 10:01:35 Reponse 1071
+2018/04/13 10:05:40 Connexion de 127.0.0.1
+2018/04/13 10:05:40 Commande QUIT par 127.0.0.1
+2018/04/13 10:05:40 Reponse 4000
+2018/04/13 10:05:49 Serveur en attente sur le port 4004
+2018/04/13 10:05:57 Connexion de 127.0.0.1
+2018/04/13 10:05:57 Commande INFO par 127.0.0.1
+2018/04/13 10:05:57 Reponse 1071
+2018/04/13 10:06:58 Serveur en attente sur le port 4004
+2018/04/13 10:07:06 Connexion de 127.0.0.1
+2018/04/13 10:07:06 Commande QUIT par 127.0.0.1
+2018/04/13 10:07:06 Reponse 1011
+2018/04/13 10:07:26 Connexion de 127.0.0.1
+2018/04/13 10:07:26 Commande INFO par 127.0.0.1
+2018/04/13 10:07:26 Reponse 1071
+2018/04/13 10:08:43 Serveur en attente sur le port 4004
+2018/04/13 10:08:49 Connexion de 127.0.0.1
+2018/04/13 10:08:49 Commande INFO par 127.0.0.1
+2018/04/13 10:08:49 Reponse 1071
+2018/04/13 10:09:12 Connexion de 127.0.0.1
+2018/04/13 10:09:12 Commande QUIT par 127.0.0.1
+2018/04/13 10:09:12 Reponse 1011
+2018/04/13 10:14:28 Serveur en attente sur le port 4004
+2018/04/13 10:14:34 Connexion de 127.0.0.1
+2018/04/13 10:14:34 Commande INFO par 127.0.0.1
+2018/04/13 10:14:34 Reponse 1071
+2018/04/13 10:14:40 Connexion de 127.0.0.1
+2018/04/13 10:14:40 Commande MOVE par 127.0.0.1
+2018/04/13 10:14:40 Reponse 1081
+2018/04/13 10:14:44 Connexion de 127.0.0.1
+2018/04/13 10:14:44 Commande MOVE par 127.0.0.1
+2018/04/13 10:14:44 Reponse 1081
+2018/04/13 10:14:46 Connexion de 127.0.0.1
+2018/04/13 10:14:46 Commande INFO par 127.0.0.1
+2018/04/13 10:14:47 Reponse 1071
+2018/04/13 10:14:50 Connexion de 127.0.0.1
+2018/04/13 10:14:50 Commande MOVE par 127.0.0.1
+2018/04/13 10:14:50 Reponse 1081
+2018/04/13 10:14:55 Connexion de 127.0.0.1
+2018/04/13 10:14:55 Commande MOVE par 127.0.0.1
+2018/04/13 10:14:55 Reponse 2081
+2018/04/13 10:14:59 Connexion de 127.0.0.1
+2018/04/13 10:14:59 Commande MOVE par 127.0.0.1
+2018/04/13 10:14:59 Reponse 1081
+2018/04/13 10:15:03 Connexion de 127.0.0.1
+2018/04/13 10:15:03 Commande MOVE par 127.0.0.1
+2018/04/13 10:15:03 Reponse 1081
+2018/04/13 10:15:07 Connexion de 127.0.0.1
+2018/04/13 10:15:07 Commande MOVE par 127.0.0.1
+2018/04/13 10:15:07 Reponse 1081
+2018/04/13 10:15:12 Connexion de 127.0.0.1
+2018/04/13 10:15:12 Commande MOVE par 127.0.0.1
+2018/04/13 10:15:12 Reponse 1081
+2018/04/13 10:15:16 Connexion de 127.0.0.1
+2018/04/13 10:15:16 Commande STATUS par 127.0.0.1
+2018/04/13 10:15:16 Reponse 1061
