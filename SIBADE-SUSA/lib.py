@@ -110,17 +110,23 @@ class Map:
 	@property
 	def listRobot(self) : return self.__listRobot
 	
-	def __str__(self):
+	def __str__(self,client):
 		ret = ""
 		for lig in self.__grid:
 			ret += "|"
 			for col in lig:
 				isRob = False
+				isMyRob = False
 				for robot in self.__listRobot:
    					if self.__listRobot[robot].posX == col.posX and self.__listRobot[robot].posY == col.posY and self.__listRobot[robot].actif:
 					    isRob = True
+					    if self.__listRobot[robot] == self.__listRobot[client]:
+							isMyRob = True
 				if isRob :
-					ret+= "-|"
+					if isMyRob :
+						ret+= "r|"
+					else:
+						ret+= "-|"
 				else:
 					ret+= str(col) +"|"
 			ret += "\n"
