@@ -135,17 +135,17 @@ if adr_client[0] not in mapServ.listRobot :
 while True:
     try:
         print("entre")
-        with open(config['DEFAULT']['log'], "a") as logFic:
-            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Connexion de " ) #+ adr_client[0]
 
         cmd = sock_server.recvfrom(255)
         (mess , uneIP) = cmd
+        with open(config['DEFAULT']['log'], "a") as logFic:
+            logFic.write("\n" + datetime.datetime.now().strftime("%Y/%m/%d %H:%M:%S") + " Connexion de " +uneIP[0]) #+ adr_client[0]
 
         if uneIP not in mapServ.listRobot :
-            initRobot(uneIP)
+            initRobot(uneIP[0])
 
         #rep = switch(adr_client[0],cmd,mapServ)
-        rep = switch(uneIP,mess,mapServ)
+        rep = switch(uneIP[0],mess,mapServ)
         actualTimer = time.time()
         print(initTimer,actualTimer,actualTimer-initTimer)
         #if actualTimer - initTimer > 300 : #5min
@@ -153,11 +153,11 @@ while True:
             mapServ.refreshRess()
             initTimer=time.time()
         print(rep)
-        print(mapServ)
+        print(mapServ.afficheMap(uneIP[0]))
         #print(mapServ.listRobot[adr_client[0]])
         print("_____")
         updateLog(rep.split("_")[0])
-        print(uneIP)
+        print(uneIP[0])
         #print(adr_client)
         print(rep)
         sock_server.sendto(rep.encode(), uneIP)

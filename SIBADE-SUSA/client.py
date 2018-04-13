@@ -28,6 +28,7 @@ class MaWin(QtWidgets.QWidget, Ui_Dialog):
             if mess != "":
                 print("click3")
                 if (mess == "quit"):
+                    sock.sendto(mess.encode(), ((config['DEFAULT']['ip']), (int)(config['DEFAULT']['port'])))
                     print("Merci d'avoir utiliser serveur client,  Aurevoir")
                     exit(0)
                 ui.Command.clear()
